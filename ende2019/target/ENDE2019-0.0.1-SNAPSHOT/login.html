@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<!-- jquery 在前面-->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap -->
+    <link href="statics/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="statics/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style>
+	.content{
+		width: 936px;
+		background: #fff;
+		position: relative;
+		margin: 30px auto;
+		padding: 20px;
+	}
+	.content .reg-intro-text{
+		color: #999
+	}
+	.content .top{
+		width: 100%;
+		float: left;
+		position: relative;
+	}
+	.content .reg-description-text{
+		color: #999
+	}
+	.content .header{
+		margin: 0 20px 0;
+		min-height: 50px;
+		position: relative;
+		width: 896px;
+	}
+	.content .logoRight{
+		display: inline-block;
+		width: 300px;
+		vertical-align: middle;
+		padding-left: 30px;
+		line-height: 1.8em;
+		color: #6E8EA5
+	}
+	.content .middle {
+		padding: 10px 20px;
+		clear: both;
+		position: relative;
+	}
+	.content h1{
+		z-index: 1000;
+		padding: 30px 0 20px;
+		clear: both;
+		color: #46c2ba;
+		text-align: center;
+	}
+	.content .section-header{
+		color: #6E8EA5;
+		background: #AAD5EE;
+		font-size: 1.6em;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		padding: 5px;
+	}
+	.content .reg-process-content{
+		padding: 10px 0;
+		float: left;
+		width: 100%;
+	}
+	.content .reg-confirmation-login{
+		margin: 0 0 15px 0;
+		float: left;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+	.content .reg-field-container{
+		background: #E5F2FA;
+		margin: 0 0 2px 0;
+		padding: 5px 10px 3px 10px;
+		overflow: hidden;
+		float: left;
+		width: 99%;
+		position: relative;
+	}
+	.content .reg-process-row{
+		float: left;
+    	width: 100%;
+	}
+	.content .reg-field-left-column{
+		width: 40%;
+		float: left;
+		text-align: right;
+		padding: 0 10px 0 0;
+		font-weight: bold;
+		color: #cc0000;
+	}
+	.errorNotice{
+		color: red;
+		padding-left: 10px;
+	}
+	</style>
+	</head>
+	<body background="assets/images/803120d8ff16b0f897a8e705fc44d1fb_1_180211222526_1.jpg" style="background-size: cover;">
+		<div class="content form-page custom-image-header">
+			<div class="top">
+				<img src="./assets/images/logo.png" alt="">
+				<div class="logoRight">
+					<p>The 24th International Workshop on
+							Electromagnetic Nondestructive Evaluation
+							Longemont Hotels in Chengdu, China
+							September 11-14, 2019
+							</p>
+				</div>
+			</div>
+			<div class="bottom clearfix">
+				<div class="clearfix">
+					<h1>ENDE 2019</h1>
+					<div class="reg-intro-text">
+						<p>
+							<strong style="text-align: justify;">
+								<span style="font-family: Arial, Helvetica, sans-serif;">
+								
+								<em>
+									&nbsp;<br>Note to Authors: <br>
+								</em>
+								</span>
+							</strong>
+							<span style="text-align: justify; font-family: Arial, Helvetica, sans-serif;">
+								<br>
+								While logged in, you can submit the paper, view the paper status, and register the conference. If you have already completed the conference registration, you can go directly to the payment page. You can also add new conference registration information.
+								<br>
+								
+							</span>
+						</p>
+					</div>
+					<h2 class="section-header">
+						<span>user's information</span>
+					</h2>
+					<div class="reg-process-content">
+						<div class="reg-description-text">
+							<p><span>
+								<strong>Please enter your e-mail address below.</strong>
+
+							</span></p>
+						</div>
+						<div class="reg-confirmation-login reg-section">
+							<div class="reg-confirmation-login reg-section">
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Email:</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input id="email" type="text">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Password:</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input id="password" type="password">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								
+								<div class="register-btn-bottom">
+									<div class="already-registered-link">
+										<span>
+											<a class="ListText2" href=""></a>
+										</span>
+									</div>
+									<div class="register-btn-bottom">
+										
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<p class="text-center" style="color:#999">Don't have an account yet? <a href="register.html">Sign up now</a></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="text-center">
+				<button id="LoginSubmit" class="btn btn-primary" style="width:150px;">Login</button>
+				
+			</div>
+
+		</div>
+	   <script src="./assets/js/common.js"></script>
+	   <script type="text/javascript">
+	    	$("#LoginSubmit").click(function(){
+	    		if(!validate_form())  //若验证成功，则发送请求
+	    		{
+                    var email = $("#email").val();
+                    var password = $("#password").val();
+		    		$.ajax({
+		    			type:"POST",
+		    			url:baseURL+"login",
+		    			data:{"email":email,"password":password},
+		    			success:function(result){
+		    				validate_result(result);
+		    			},
+		    			error:function(){
+		    			    alert("ajax fail...");
+		    			   }
+		    		});
+	    		}
+	    		else
+	    		{
+	    			alert("error in list");
+	    		}
+	    	});
+	    	
+	    	function validate_result(result){
+	    		if(result.code=="200")
+	    		{
+	    			var user = result.data.user;
+	    			var userStringData = JSON.stringify(user);
+	    			setCookie("username",user.name);
+	    			setCookie("userid",user.id);
+	    			window.location.href = baseURL+"index.html"; 
+	    		}
+	    		else
+	    		{
+	    			var msgs = result.msg;
+	    			for(var message in msgs)
+	    			{
+	    				show_validate_info("#"+message,"error",msgs[message]);
+	    			}
+	    		}
+	    	}
+	    	function validate_form(){
+	    		var errorFlag = false;
+    			var UserEmail = $("#email").val();
+    			var regEmail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/; 
+    			if(UserEmail == "")
+    			{
+    				show_validate_info("#email","error","mailbox cannot be empty");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			if(!regEmail.test(UserEmail))
+	    			{
+	    				show_validate_info("#email","error","format error in mailbox");
+	    				errorFlag = true;
+	    			}
+	    			else
+	    			{
+	    				show_validate_info("#email","success","");
+	    			}
+	    		}
+    			var UserPassword = $("#password").val();
+    			var regPassword = /^[a-zA-Z0-9_-]{6,15}$/;
+    			if(UserPassword == "")
+    			{
+    				show_validate_info("#password","error","password cannot be empty");
+    				errorFlag = true;
+    			}
+    			else
+    			{					
+	    			show_validate_info("#password","success","");	    				
+    			}
+    			return errorFlag;
+	    	}
+	    	function show_validate_info(element,status,msg){
+	        		$(element).next("span").text(msg);
+	    	}
+	    </script>
+	</body>
+<style>
+	.form-horizontal{
+		margin: 60px auto;
+		width: 320px;
+	}
+	.form-border{
+		border: 1px solid #d8dee2;
+		border-radius: 5px;
+		padding-top: 20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		background-color:#F8F8F8;
+	}
+</style>
+</html>

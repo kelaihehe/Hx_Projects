@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ENDE2019</title>
+	<meta name="keywords" content="The 24th Electromagnetic Nondestructive Evaluation Workshop (ENDE2019)">
+	<meta name="description" content="The 24th Electromagnetic Nondestructive Evaluation Workshop (ENDE2019)">
+	<meta charset='utf-8'>
+	<meta content='IE=edge' http-equiv='X-UA-Compatible'>
+	<script type="text/javascript">
+        var autoRedirect=function(){
+            var w=window.screen.width;
+            if (parseInt(w) < 960 && location.href.indexOf("/m/") < 0) {
+                location.href = location.pathname+"m/";
+            }
+        };
+        /*var redirect=function(page){
+    		window.location.href=baseURL+page;
+    	};*/
+        var redirect = function(sobj){
+            var docurl =sobj.options[sobj.selectedIndex].value;
+            if (docurl != "") {
+                open(docurl,'_blank');
+                sobj.selectedIndex=0;
+                sobj.blur();
+            }
+        }
+        autoRedirect();
+        window.onresize=function(){
+            autoRedirect();
+        };
+	</script>
+	<link rel="icon" type="image/x-icon" href="./assets/images/logo.png" />
+	<link href="./statics/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="./assets/css/common.min.css_vv20180704.css" />
+	<link type="text/css" rel="stylesheet" href="./assets/css/index.min.css" />
+	<style>
+		.fixBox{
+			width: 120px;
+			height: auto;
+			background: transparent;
+			position: fixed;
+			right: 20px;
+			top: 200px;
+			border-radius: 5px;
+			border: 1px solid #2c8ec4;
+			padding: 10px
+		}
+		.fixBox2{
+			width: 250px;
+			height: auto;
+			background: transparent;
+			position: fixed;
+			left: 20px;
+			top: 200px;
+			border-radius: 5px;
+			border: 2px solid #2c8ec4;
+			padding: 5px
+		}
+		
+		
+		.lw-submit {
+			background: #2c8ec4;
+			height: 40px;
+			color: #fff;
+			width: 120px;
+			margin: 10px 0 -10px -11px;
+			border-radius: 0 0 5px 5px;
+			line-height: 40px;
+		}
+	
+		.lw-submit a {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			color: #fff
+		}
+		.partner img{
+			width: 60%;
+			padding-top: 20px;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<div class="container" id="header">
+		<div class="header-top">
+			<div class="logo">
+				<a href="javascript:void(0);">
+					<div class="logo-text">
+						<span class="big">Welcome to ENDE 2019</span>
+					</div>
+				</a>
+			</div>
+			<div class="search">
+				<div class="input-group">
+					<!-- <input class="form-search form-control" placeholder="Search" type="search">
+                    <span class="input-group-btn">
+                        <button onclick="search();" type="submit" value="Search" class="button js-form-submit form-submit btn-primary btn icon-only" name="">
+                            <span class="sr-only">Search</span><span class="icon glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                    </span> -->
+				</div>
+			</div>
+			<div class="">
+
+			</div>
+		</div>
+
+		<div class="header-nav">
+			<!--main nav begin-->
+			<nav>
+				<ul>
+					<li class="active">
+						<a href="javascript:void(0);" onclick="loadPage('main.html');">Home</a>
+					</li>
+					<li class="">
+						<a href="javascript:void(0);" onclick="loadPage('general.html');" class="submenu" data-control="product">General</a>
+					</li>
+					<li class="">
+						<a href="javascript:void(0);" onclick="loadPage('registration.html');" class="submenu" data-control="support">Registration</a>
+					</li>
+					<li class="">
+						<a href="javascript:void(0);" onclick="loadPage('authors.html');">Paper Submission</a>
+					</li>
+					<li class="">
+						<a href="javascript:void(0);" onclick="loadPage('accommodation.html');">Venue</a>
+					</li>
+					<li class="">
+						<a href="javascript:void(0);" onclick="loadPage('program.html');">Program</a>
+					</li>
+					<li class="">
+						<a href="javascript:void(0);" onclick="loadPage('contact.html');">Contact</a>
+					</li>
+				</ul>
+			</nav>
+			<!--main nav end-->
+		</div>
+	</div>
+</header>
+
+<div class="fixBox">
+	<!-- 选择语言 -->
+	<div id="username" class="dropdown language" style="text-align: center;">
+		<button class="btn btn-default dropdown-toggle" style="background: none;" type="button" id="dropdownMenu1"
+		data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		Language
+		<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			<li><a href="javascript:void(0);" onclick="switchLanguage(0);">English</a></li>
+			<li role="separator" class="divider"></li>
+			<li><a href="javascript:void(0);" onclick="switchLanguage(1);">Chinese</a></li>
+
+		</ul>
+	</div>
+	<!-- 选择语言 end -->
+	<!-- 登录注册 -->
+	<div class="Register-Login-container" id="Register-Login" style="margin-top:10px;">
+		<button id="register" type="button" class="btn btn-default btn-block" style="background: none;">
+			<a  href="register.html">Register</a>
+		</button>
+		<button id="contribute" type="button" class="btn btn-default btn-block" style="background: none;display: none;">
+			<a href="contribute.html">Submit</a>
+		</button>
+		<button id="v_papers" type="button" class="btn btn-default btn-block" style="background: none;display: none;">
+			<a href="showPapers.html">View</a>
+		</button>
+		<button id="w_register" type="button" class="btn btn-default btn-block" style="background: none;display: none;">
+			<a href="meetingRegister.html">Attendees</a>
+		</button>
+		<button id="pay" type="button" class="btn btn-default btn-block" style="background: none;display: none;">
+			<a href="pay.html">Payment</a>
+		</button>
+	</div>
+	<!-- 登录注册 end -->
+	<p id="submit" class="lw-submit text-center"><a href="login.html">Login</a></p>
+	<p id="quitButton" class="lw-submit text-center" style="display: none;"><a href="javascript:void(0);">Exit</a></p>
+</div>
+
+
+<div class="fixBox2">
+	<div><p><br><b>Latest News:</b></br> <p> </div>
+	<div class="Register-Login-container" id="Register-Login" style="margin-top:4px">
+		<hr/>
+	    <p style="text-align:justify"> April. 22: the deadline of 2-page short paper is extended to 30th May, the result will be released before 20th June.</p>
+		<hr/>
+		<p style="text-align:justify"> March. 25: the paper submission is now open, to enter the portal of submission please register for an account then log-in.</p>
+		<hr/>
+	</div>
+	<div><p><br><b>Important Dates:</b></br> <p> </div>
+	<div class="Register-Login-container" id="Register-Login" style="margin-top:4px;">
+		<hr/>
+		<p style="text-align:justify">May. 30, 2019: deadline for 2-page short paper submission.</p>
+		<hr/>
+		<p style="text-align:justify">Jul. 31, 2019: deadline of early bird registration.</p>
+		<hr/>
+		<p>Sep. 11-14, 2019: workshop.</p>
+		<hr/>
+		<p style="text-align:justify">Nov. 30, 2019: deadline for full paper submission.</p>
+		<hr/>
+	</div>
+</div>
+
+
+<div id="main">
+	<div class="news clearfix" style="text-align:center;color:black;">
+		<div class="content-title">
+			<h1>The 24th International Workshop on Electromagnetic Nondestructive Evaluation (ENDE2019)</h1>
+			<h3 class="short-name">(Paper submission is now open, all contributions and participation are welcomed)</h3>
+			<h3>Longemont Hotels in Chengdu, Sichuan, China</h3>
+			<h3><b>September 11-14, 2019</b></h3>
+		</div>
+		<img src="./assets/images/banner-m.jpg" alt="chengdu" class="img-responsive" width="100%;">
+		
+		<p>
+			The 24th International Workshop on Electromagnetic Nondestructive Evaluation (ENDE2019) will be held on September 11-14, 2019, at the Longemont Hotels in Chengdu, Sichuan, China.
+		</p>
+		<p style="text-align: justify;">
+			This year's technical sessions, student posters competition and other special events will be hosted by University of Electronic Science and Technology of China, Sichuan University and Southwest Jiaotong University. The subjects of the 24th workshop will focus on the theoretical and applied research on Electromagnetic Non-destructive Evaluation methods and provide a wonderful opportunity to exchange ideas and update on the latest developments.
+		</p>
+		<p>
+			We welcome you to join us for an exciting program in “the Land of Abundance” in 2019!
+		</p>
+	</div>
+	<div class="recommend clearfix" style="text-align: justify; color:black;">
+		<p>
+			<i class="glyphicon glyphicon-play"></i> <strong>General Chair:</strong>
+		<p>Guiyun Tian, University of Electronic Science and Technology of China/ Newcastle University</p>
+		<i class="glyphicon glyphicon-play"></i> <strong>Co-Chairs:</strong>
+		<p>Zhenmao Chen, Xi’an Jiaotong University, China</p>
+		<p>Junming Lin, Eddysun (Xiamen) Electronic Co.Ltd.，China</p>
+		<p>Tianpeng Qiang, Special Equipment Safety Supervision Inspection Institute of Jiangsu Province, China</p>
+		<p>Xiaorong Gao, Southwest Jiaotong University, China</p>
+		</p>
+		<p>
+		<p><i class="glyphicon glyphicon-play"></i> <strong>Call for Paper: </strong></p>
+		<p>Authors are invited to submit 2-page short papers (full papers are also welcomed) relevant to the workshop topics no later than 30th May. Papers should present original work not submitted or published elsewhere. All papers are to be reviewed by Scientific Committee of ENDE 2019. The accepted ones will be included in the workshop proceeding. Authors of accepted short papers are encouraged to submit full papers (4 to 6 pages), which will be peer reviewed for inclusion in a volume of the ISTP (EI) indexed book series “Studies on Applied Electromagnetic and Mechanics”, published by IOS Press. Outstanding papers will be recommended to SCI indexed journals.</p>
+		<p>Templates: short paper <a href="http://www.ende2019.com/file/abstract_template.doc">[Word_*.doc]</a> full paper <a href="http://www.ende2019.com/file/ECRC-Author-Instructions-and-tools-Word.rar">[Word_instructions_*.rar]</a> <a href="http://www.ende2019.com/file/ECRC-Author-Instructions-and-tools-LaTeX.zip">[LaTex_instructions_*.rar]</a></p>
+		</p>
+		<p>
+		<p><i class="glyphicon glyphicon-play"></i> <strong>List of Topics:</strong></p>
+		<p>Advanced ENDE sensors</p>
+		<p>Analytical and numerical modeling of ENDE</p>
+		<p>Integrated ENDT&E systems</p>
+		<p>Inversion problem, reconstruction and quantification</p>
+		<p>Imaging, signal and image processing</p>
+		<p>QNDE and AI for ENDE</p>
+		<p>Material characterization (damages and micro-defects)</p>
+		<p>Monitoring and diagnosis of mechanical structures</p>
+		<p>New developments in ENDE</p>
+		<p>Innovative industrial applications of ENDE</p>
+		</p>
+		<br>
+		<p><i class="glyphicon glyphicon-play"></i> <strong>Cooperative Partners:</strong></p>
+		<div class="partner clearfix">
+			<img src="./assets/images/coop-logo.jpg" alt="">
+		</div>
+	</div>
+	
+</div>
+
+<footer>
+		
+	<div class="container" style="color:black;">
+		<div class="clearfix footer-nav">
+			<div class="col-md-8">
+				<p><strong>Conference Venue: </strong>The Longemont Hotels Chengdu</p>
+				<p><strong>Address: </strong>No. 8 Jialingjiang Rd., Chenghua Dist., Chengdu, Sichuan, P.R. China</p>
+				<p><strong>Date: </strong>September 11-14，2019</p>
+				<p><strong>Related Conference: </strong><a href="http://isem2019.nuaa.edu.cn/" target="_blank">ISEM 2019</a></p>
+			</div>
+			<div id="test" class="col-md-4">
+				<div class="footer-logo"><img src="./assets/images/logo.png" class="img-responsive"></div>
+			</div>
+
+			
+
+		</div>
+		<div class="clearfix copyright" style="text-align: center;">
+			<div class="col-md-12">
+				Copyright©The 24th Electromagnetic Nondestructive Evaluation Workshop (ENDE2019)
+			</div>
+			<div class="col-md-12">
+				备案号：<a href="http://www.miitbeian.gov.cn" target="_blank">30153543981198565</a>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="go-top hidden"><a href="javascript:;"><img src="./assets/images/btn-go-top.jpg"></a></div>
+<script src="./statics/jquery/3.2.1/jquery.min.js"></script>
+<script src="./statics/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./statics/Swiper/3.4.0/js/swiper.min.js"></script>
+<script src="./statics/jquery/sticky/1.0.4/jquery.sticky.min.js"></script>
+<script src="./assets/js/common.min.js_vv20180806.js"></script>
+<script src="./assets/js/index.min.js"></script>
+<script src="./assets/js/common.js"></script>
+<script src="./assets/js/view.js"></script>
+<script>
+    islogin();
+    var currentPage = getCookie("currentPage");
+    if(currentPage != 'index.html'){
+        loadPage(currentPage);
+    }
+</script>
+</body>
+</html>

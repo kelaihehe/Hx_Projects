@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<!-- jquery 在前面-->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap -->
+    <link href="statics/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="statics/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style>
+			.content{
+				width: 936px;
+				background: #fff;
+				position: relative;
+				margin: 30px auto;
+				padding: 20px;
+			}
+			.content .reg-intro-text{
+				color: #999
+			}
+			.content .top{
+				width: 100%;
+				float: left;
+				position: relative;
+			}
+			.content .reg-description-text{
+				color: #999
+			}
+			.content .header{
+				margin: 0 20px 0;
+				min-height: 50px;
+				position: relative;
+				width: 896px;
+			}
+			.content .logoRight{
+				display: inline-block;
+				width: 300px;
+				vertical-align: middle;
+				padding-left: 30px;
+				line-height: 1.8em;
+				color: #6E8EA5
+			}
+			.content .middle {
+				padding: 10px 20px;
+				clear: both;
+				position: relative;
+			}
+			.content h1{
+				z-index: 1000;
+				padding: 30px 0 20px;
+				clear: both;
+				color: #46c2ba;
+				text-align: center;
+			}
+			.content .section-header{
+				color: #6E8EA5;
+				background: #AAD5EE;
+				font-size: 1.6em;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				padding: 5px;
+			}
+			.content .reg-process-content{
+				padding: 10px 0;
+				float: left;
+				width: 100%;
+			}
+			.content .reg-confirmation-login{
+				margin: 0 0 15px 0;
+				float: left;
+				width: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			.content .reg-field-container{
+				background: #E5F2FA;
+				margin: 0 0 2px 0;
+				padding: 5px 10px 3px 10px;
+				overflow: hidden;
+				float: left;
+				width: 99%;
+				position: relative;
+			}
+			.content .reg-process-row{
+				float: left;
+				width: 100%;
+			}
+			.content .reg-field-left-column{
+				width: 40%;
+				float: left;
+				text-align: right;
+				padding: 0 10px 0 0;
+				font-weight: bold;
+				color: #cc0000;
+			}
+			.gray{
+				color: #999;
+			}
+			.errorNotice{
+				color: red;
+				padding-left: 10px;
+			}
+			</style>
+	</head>
+	<body background="assets/images/803120d8ff16b0f897a8e705fc44d1fb_1_180211222526_1.jpg" style="background-size: cover;">
+		<div class="content form-page custom-image-header">
+			<div class="top">
+				<a href="/index.html"><img src="./assets/images/logo.png" alt=""></a>
+				<div class="logoRight">
+					<p>第24届国际电磁无损评估研讨会 <br>
+						(ENDE2019)<br>
+						四川成都龙之梦酒店<br>
+						2019年9月11日至14日
+					</p>
+				</div>
+			</div>
+			<div class="bottom clearfix">
+				<div class="clearfix">
+					<h1>ENDE 2019</h1>
+					<div class="reg-intro-text">
+						<p>
+							<strong style="text-align: justify;">
+								<span style="font-family: Arial, Helvetica, sans-serif;">
+		
+									<em>
+										&nbsp;<br>Note to Authors: <br>
+									</em>
+								</span>
+							</strong>
+							<span style="text-align: justify; font-family: Arial, Helvetica, sans-serif;">
+								<br>
+								请先进行网站注册，然后可以在登录的状态下进行其他操作，如投稿、查看稿件状态、会议注册等。一个网站ID可以进行多个会议注册和缴费操作。
+								<br>
+		
+							</span>
+						</p>
+					</div>
+					<h2 class="section-header">
+						<span>稿件上传</span>
+					</h2>
+					<div class="reg-process-content">
+						<div class="reg-description-text">
+							<p><span>
+									<strong>输入您的信息并上传稿件</strong>
+		
+								</span></p>
+						</div>
+						<div class="reg-confirmation-login reg-section">
+							<div class="reg-confirmation-login reg-section">
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="" >* 姓名 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="name">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="" >* 邮箱 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="email">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 国籍 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="nationality">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 学校机构 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="affiliation">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 稿件标题 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="title">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 报告类型 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<select name="" id="type" style="width:175px;">
+												<option value="1">口头报告</option>
+												<option value="2">海报展示</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 稿件上传 :</label>
+										</div>
+										<div class="reg-field-right-column">
+
+											<button class="fileUpload"><label for="file" class="fileUploads">选择文件</label></button> 
+											<span class="fileNotice"></span>
+											<input type="file"  placeholder="file" id="file" name="file" style="display:none">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+									<div class="progress" style="margin-top: 30px; float: left; display: none; width: 100%">
+										<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+											0% Complete
+										</div>
+									</div>
+								</div>
+								
+		
+								<div class="register-btn-bottom">
+									<div class="already-registered-link">
+										<span>
+											<a class="ListText2" href=""></a>
+										</span>
+									</div>
+									<div class="register-btn-bottom">
+		
+									</div>
+								</div>
+
+							</div>
+		
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="text-center">
+				<button class="btn btn-primary" id="PaperSubmit" style="width:150px;">提交</button>
+		
+			</div>
+		
+		</div>
+	   <script src="./assets/js/common.js"></script>
+	   <script type="text/javascript">
+			var n = 0
+	   		function progressGo(){
+				if (n >= 90) {
+					return
+				}
+				n+=1
+				$(".progress-bar:eq(0)").attr("aria-valuenow",n).css("width",n+"%").html(n+"% Complete");
+			}
+
+			$("#file").change(function(){
+				var fileName = $("#file")[0].files[0].name
+				$(".fileNotice").html("Ready to Submit：" + fileName)
+			})
+	    	$("#PaperSubmit").click(function(){
+	    		if(!validate_form())  //若验证成功，则发送请求
+	    		{
+					$(".progress:eq(0)").css("display","block");
+					clearInterval(Ti);
+					progressGo();
+					var Ti = setInterval(progressGo,100);
+
+	    			var formData = new FormData();
+	    			formData.append("name",$("#name").val());
+	    			formData.append("email",$("#email").val());
+	    			formData.append("nationality",$("#nationality").val());
+	    			formData.append("affiliation",$("#affiliation").val());
+	    			formData.append("title",$("#title").val());
+	    			formData.append("type",$("#type").val());
+	    			formData.append("file",$("#file")[0].files[0]);	    			
+		    		$.ajax({
+		    			type:"POST",
+		    			url:baseURL+"contribute",
+		    			data:formData,
+		    			processData:false,
+		    			contentType:false,
+		    			success:function(result){
+							alert("投稿成功！在论文查看页面可查看稿件信息");
+							sendEmailAfterContribute(result.data.strNumber);
+							clearInterval(Ti);
+							$(".progress-bar:eq(0)").attr("aria-valuenow",100).css("width","100%").html("100% Complete");
+							$(".progress:eq(0)").css("display","none");
+		    				window.location.href = baseURL+"index.html";
+		    			},
+		    			error:function(){
+							clearInterval(Ti);
+							$(".progress:eq(0)").css("display","none");
+							n = 0;
+		    			    alert("投稿失败...请重新上传");
+		    			   }
+		    		});
+	    		}
+	    		else
+	    		{
+	    			alert("格式错误");
+	    		}
+	    	});
+	    	
+		function sendEmailAfterContribute(strNumber){
+	    		$.ajax({
+		    			type:"POST",
+		    			url:baseURL+"SendEmailAfterContribute",
+		    			data:{"email":$("#email").val(),"strNumber":strNumber},
+		    			async:true, //异步处理
+		    			success:function(result){
+		    				//alert("sendEmailAfterContribute Success...");
+		    			},
+		    			error:function(){
+		    			    //alert("sendEmailAfterContribute Fail...");
+		    			}
+		    		});
+	    	}
+
+	    	function validate_form(){
+	    		var errorFlag = false;
+	    		
+				var UserName = $("#name").val();
+    			if(UserName == "")
+    			{
+    				show_validate_info("#name","error","名字不能为空");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#name","success","");
+	    		}
+    			
+    			var UserEmail = $("#email").val();
+    		//	var regEmail = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+    			var regEmail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+    			if(UserEmail == "")
+    			{
+    				show_validate_info("#email","error","邮箱不能为空");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			if(!regEmail.test(UserEmail))
+	    			{
+	    				show_validate_info("#email","error","邮箱格式错误");
+	    				errorFlag = true;
+	    			}
+	    			else
+	    			{
+	    				show_validate_info("#email","success","");
+	    			}
+	    		}
+    			
+    			var nationality = $("#nationality").val();
+    			if(nationality == "")
+    			{
+    				show_validate_info("#nationality","error","国籍不能为空");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#nationality","success","");
+	    		}
+    			
+    			var affiliation = $("#affiliation").val();
+    			if(affiliation == "")
+    			{
+    				show_validate_info("#affiliation","error","学校/机构不能空");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#affiliation","success","");
+	    		}
+    			
+    			var title = $("#title").val();
+    			if(title == "")
+    			{
+    				show_validate_info("#title","error","标题不能空");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#title","success","");
+	    		}
+    			
+    			if($("#file").val()=="")   //需要先判断是否空，再去定义那些变量，不然（如果文件为空，那么定义出来的都是null，这样会出错）
+    			{
+    				show_validate_info("#file","error","please click submit");
+    			}
+    			else
+    			{    				
+	    			var uploadFile = $("#file")[0].files[0];
+	    			var fileSize = uploadFile.size;   //文件大小,以M为单位
+	    			var fileName = uploadFile.name;
+	    			var sp = fileName.lastIndexOf(".");  //文件名中“.”的位置
+	    			var sufix = fileName.substring(sp+1).toUpperCase(); //文件名后缀大写												
+					if(fileSize>104857600)
+					{
+						show_validate_info("#file","error","稿件大小不能超过100MB");
+						errorFlag = true;
+					}
+					else
+					{
+						if(sufix!="PDF")
+		    			{
+		    				show_validate_info("#file","error","文件只能为pdf格式");
+		    				$("#file").val()="";
+		    				errorFlag = true;
+		    			}
+		    			else
+		    			{
+		    				show_validate_info("#file","success","");
+		    			}
+					}
+				}
+
+    			
+    			return errorFlag;
+	    	}
+	    	
+	    	function show_validate_info(element,status,msg){
+	        		$(element).next("span").text(msg);
+	    	}
+	    </script>
+	</body>
+
+</html>

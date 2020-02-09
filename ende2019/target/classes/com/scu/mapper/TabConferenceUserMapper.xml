@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scu.mapper.TabConferenceUserMapper">
+  <resultMap id="BaseResultMap" type="com.scu.pojo.TabConferenceUser">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="carry_paper_id" jdbcType="BIGINT" property="carryPaperId" />
+    <result column="position" jdbcType="CHAR" property="position" />
+    <result column="gender" jdbcType="CHAR" property="gender" />
+    <result column="nationality" jdbcType="VARCHAR" property="nationality" />
+    <result column="affiliation" jdbcType="VARCHAR" property="affiliation" />
+    <result column="is_student" jdbcType="TINYINT" property="isStudent" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="state" jdbcType="TINYINT" property="state" />
+    <result column="is_pay" jdbcType="TINYINT" property="isPay" />
+    <result column="regist_user_id" jdbcType="BIGINT" property="registUserId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, email, carry_paper_id, position, gender, nationality, affiliation, is_student, 
+    create_time, last_update_time, state, is_pay, regist_user_id
+  </sql>
+  <select id="selectByExample" parameterType="com.scu.pojo.TabConferenceUserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tab_conference_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tab_conference_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from tab_conference_user
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.scu.pojo.TabConferenceUserExample">
+    delete from tab_conference_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.scu.pojo.TabConferenceUser">
+    insert into tab_conference_user (id, name, email, 
+      carry_paper_id, position, gender, 
+      nationality, affiliation, is_student, 
+      create_time, last_update_time, state, 
+      is_pay, regist_user_id)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{carryPaperId,jdbcType=BIGINT}, #{position,jdbcType=CHAR}, #{gender,jdbcType=CHAR}, 
+      #{nationality,jdbcType=VARCHAR}, #{affiliation,jdbcType=VARCHAR}, #{isStudent,jdbcType=TINYINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastUpdateTime,jdbcType=TIMESTAMP}, #{state,jdbcType=TINYINT}, 
+      #{isPay,jdbcType=TINYINT}, #{registUserId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.scu.pojo.TabConferenceUser">
+    insert into tab_conference_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="carryPaperId != null">
+        carry_paper_id,
+      </if>
+      <if test="position != null">
+        position,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="nationality != null">
+        nationality,
+      </if>
+      <if test="affiliation != null">
+        affiliation,
+      </if>
+      <if test="isStudent != null">
+        is_student,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="isPay != null">
+        is_pay,
+      </if>
+      <if test="registUserId != null">
+        regist_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="carryPaperId != null">
+        #{carryPaperId,jdbcType=BIGINT},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=CHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=CHAR},
+      </if>
+      <if test="nationality != null">
+        #{nationality,jdbcType=VARCHAR},
+      </if>
+      <if test="affiliation != null">
+        #{affiliation,jdbcType=VARCHAR},
+      </if>
+      <if test="isStudent != null">
+        #{isStudent,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=TINYINT},
+      </if>
+      <if test="isPay != null">
+        #{isPay,jdbcType=TINYINT},
+      </if>
+      <if test="registUserId != null">
+        #{registUserId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.scu.pojo.TabConferenceUserExample" resultType="java.lang.Long">
+    select count(*) from tab_conference_user
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tab_conference_user
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null">
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.carryPaperId != null">
+        carry_paper_id = #{record.carryPaperId,jdbcType=BIGINT},
+      </if>
+      <if test="record.position != null">
+        position = #{record.position,jdbcType=CHAR},
+      </if>
+      <if test="record.gender != null">
+        gender = #{record.gender,jdbcType=CHAR},
+      </if>
+      <if test="record.nationality != null">
+        nationality = #{record.nationality,jdbcType=VARCHAR},
+      </if>
+      <if test="record.affiliation != null">
+        affiliation = #{record.affiliation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isStudent != null">
+        is_student = #{record.isStudent,jdbcType=TINYINT},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastUpdateTime != null">
+        last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.state != null">
+        state = #{record.state,jdbcType=TINYINT},
+      </if>
+      <if test="record.isPay != null">
+        is_pay = #{record.isPay,jdbcType=TINYINT},
+      </if>
+      <if test="record.registUserId != null">
+        regist_user_id = #{record.registUserId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tab_conference_user
+    set id = #{record.id,jdbcType=BIGINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      carry_paper_id = #{record.carryPaperId,jdbcType=BIGINT},
+      position = #{record.position,jdbcType=CHAR},
+      gender = #{record.gender,jdbcType=CHAR},
+      nationality = #{record.nationality,jdbcType=VARCHAR},
+      affiliation = #{record.affiliation,jdbcType=VARCHAR},
+      is_student = #{record.isStudent,jdbcType=TINYINT},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      state = #{record.state,jdbcType=TINYINT},
+      is_pay = #{record.isPay,jdbcType=TINYINT},
+      regist_user_id = #{record.registUserId,jdbcType=BIGINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.scu.pojo.TabConferenceUser">
+    update tab_conference_user
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="carryPaperId != null">
+        carry_paper_id = #{carryPaperId,jdbcType=BIGINT},
+      </if>
+      <if test="position != null">
+        position = #{position,jdbcType=CHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=CHAR},
+      </if>
+      <if test="nationality != null">
+        nationality = #{nationality,jdbcType=VARCHAR},
+      </if>
+      <if test="affiliation != null">
+        affiliation = #{affiliation,jdbcType=VARCHAR},
+      </if>
+      <if test="isStudent != null">
+        is_student = #{isStudent,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=TINYINT},
+      </if>
+      <if test="isPay != null">
+        is_pay = #{isPay,jdbcType=TINYINT},
+      </if>
+      <if test="registUserId != null">
+        regist_user_id = #{registUserId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.scu.pojo.TabConferenceUser">
+    update tab_conference_user
+    set name = #{name,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      carry_paper_id = #{carryPaperId,jdbcType=BIGINT},
+      position = #{position,jdbcType=CHAR},
+      gender = #{gender,jdbcType=CHAR},
+      nationality = #{nationality,jdbcType=VARCHAR},
+      affiliation = #{affiliation,jdbcType=VARCHAR},
+      is_student = #{isStudent,jdbcType=TINYINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      state = #{state,jdbcType=TINYINT},
+      is_pay = #{isPay,jdbcType=TINYINT},
+      regist_user_id = #{registUserId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

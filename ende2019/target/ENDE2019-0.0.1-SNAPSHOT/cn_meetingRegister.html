@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<!-- jquery 在前面-->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap -->
+    <link href="statics/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="statics/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style>
+			.content{
+				width: 936px;
+				background: #fff;
+				position: relative;
+				margin: 30px auto;
+				padding: 20px;
+			}
+			.content .reg-intro-text{
+				color: #999
+			}
+			.content .top{
+				width: 100%;
+				float: left;
+				position: relative;
+			}
+			.content .reg-description-text{
+				color: #999
+			}
+			.content .header{
+				margin: 0 20px 0;
+				min-height: 50px;
+				position: relative;
+				width: 896px;
+			}
+			.content .logoRight{
+				display: inline-block;
+				width: 300px;
+				vertical-align: middle;
+				padding-left: 30px;
+				line-height: 1.8em;
+				color: #6E8EA5
+			}
+			.content .middle {
+				padding: 10px 20px;
+				clear: both;
+				position: relative;
+			}
+			.content h1{
+				z-index: 1000;
+				padding: 30px 0 20px;
+				clear: both;
+				color: #46c2ba;
+				text-align: center;
+			}
+			.content .section-header{
+				color: #6E8EA5;
+				background: #AAD5EE;
+				font-size: 1.6em;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				padding: 5px;
+			}
+			.content .reg-process-content{
+				padding: 10px 0;
+				float: left;
+				width: 100%;
+			}
+			.content .reg-confirmation-login{
+				margin: 0 0 15px 0;
+				float: left;
+				width: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			.content .reg-field-container{
+				background: #E5F2FA;
+				margin: 0 0 2px 0;
+				padding: 5px 10px 3px 10px;
+				overflow: hidden;
+				float: left;
+				width: 99%;
+				position: relative;
+			}
+			.content .reg-process-row{
+				float: left;
+				width: 100%;
+			}
+			.content .reg-field-left-column{
+				width: 40%;
+				float: left;
+				text-align: right;
+				padding: 0 10px 0 0;
+				font-weight: bold;
+				color: #cc0000;
+			}
+			.gray{
+				color: #999;
+			}
+			.errorNotice{
+				color: red;
+				padding-left: 10px;
+			}
+			</style>
+	</head>
+	<body background="assets/images/803120d8ff16b0f897a8e705fc44d1fb_1_180211222526_1.jpg" style="background-size: cover;">
+		<div class="content form-page custom-image-header">
+			<div class="top">
+				<a href="/cn_index.html"><img src="./assets/images/logo.png" alt=""></a>
+				<div class="logoRight">
+						<p>第24届国际电磁无损评估研讨会 <br>
+							(ENDE2019)<br>
+							四川成都龙之梦酒店<br>
+							2019年9月11日至14日
+						</p>
+				</div>
+			</div>
+			<div class="bottom clearfix">
+				<div class="clearfix">
+					<h1>ENDE 2019</h1>
+					<div class="reg-intro-text">
+						<p>
+							<strong style="text-align: justify;">
+								<span style="font-family: Arial, Helvetica, sans-serif;">
+		
+									<em>
+										&nbsp;<br>用户须知 <br>
+									</em>
+								</span>
+							</strong>
+							<span style="text-align: justify; font-family: Arial, Helvetica, sans-serif;">
+								<br>
+								请在本页面注册参会人信息，请确保参会人信息填写正确无误，完成后将转到付款页。
+								<br>
+		
+							</span>
+						</p>
+					</div>
+					<h2 class="section-header">
+						<span>参会人注册</span>
+					</h2>
+					<div class="reg-process-content">
+						<div class="reg-description-text">
+							<p><span>
+									<strong>请在下面输入参会人信息.</strong>
+		
+								</span></p>
+						</div>
+						<div class="reg-confirmation-login reg-section">
+							<div class="reg-confirmation-login reg-section">
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 姓名:</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="name">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 性别:</label>
+										</div>
+										<div class="reg-field-right-column">
+											<select name="" id="gender" style="width:175px;">
+												<option value="1">男</option>
+												<option value="2">女</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 邮箱 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="email">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 头衔 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<select name="" id="position" style="width:175px;">
+												<option value="1">教授</option>
+												<option value="2">博士</option>
+												<option value="3">先生</option>
+												<option value="4">女士</option>
+												<option value="5">小姐</option>												
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 国籍 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="nationality">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 学校/机构 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="affiliation">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+                                </div>
+                                <div class="reg-field-container">
+                                    <div class="reg-process-row">
+                                        <div class="reg-field-left-column">
+                                            <label class="reg-required-field" for="">* 注册类型 :</label>
+                                        </div>
+                                        <div class="reg-field-right-column">
+                                            <select name="" id="is_student" style="width:175px;">
+                                                <option value="0">普通</option>
+                                                <option value="1">学生</option>
+                                                <option value="2">陪同人员</option>
+                                                <option value="3">仅限宴会门票</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="reg-field-container">
+                                    <div class="reg-process-row">
+                                        <div class="reg-field-left-column">
+                                            <label class="reg-required-field" for="">* 稿件 :</label>
+                                        </div>
+                                        <div class="reg-field-right-column">
+                                            <select name="" id="carry_paper_id" style="width:175px;">
+                                                <option value="0">None</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="register-btn-bottom">
+									<div class="already-registered-link">
+										<span>
+											<a class="ListText2" href=""></a>
+										</span>
+									</div>
+									<div class="register-btn-bottom">
+		
+									</div>
+								</div>
+							</div>
+		
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="text-center">
+				<button class="btn btn-primary" id="RegisterSubmit" style="width:150px;">注册</button>
+		
+			</div>
+		
+		</div>
+	   <script src="./assets/js/common.js"></script>
+	   <script type="text/javascript">
+	   		$(function(){
+    			show_paperInfo();
+    		})
+		   	function show_paperInfo(){
+	    		$.ajax({
+	    			url:baseURL+"queryPapersByUser",
+	    			type:"GET",
+	    			success:function(result){
+						paper_table(result);  //显示当前用户提交的所有的paper的name
+	    			},
+	    			error:function(){
+			    		alert("ajax fail...");			    		
+			    	}
+	    		});
+	    	}
+		   	
+		   	function paper_table(result)
+		   	{
+		   		
+		   		var papers = result.data.PaperList;
+		   		$.each(papers, function(index,item) {
+		   			var Paper_title = $("<option></option>").append(item.title).val(item.id); 
+		   			$("#carry_paper_id").append(Paper_title);	
+		   		});
+		   	}		   	
+		   	
+	    	$("#RegisterSubmit").click(function(){
+	    		
+	    		if(!validate_form())  //若验证成功，则发送请求
+	    		{
+	    			var formData = new FormData();
+	    			formData.append("name",$("#name").val());
+	    			formData.append("gender",$("#gender").val());
+	    			formData.append("email",$("#email").val());
+	    			formData.append("position",$("#position").val());
+	    			formData.append("nationality",$("#nationality").val());
+	    			formData.append("affiliation",$("#affiliation").val());
+	    			formData.append("isStudent",$("#is_student").val());
+	    			formData.append("carryPaperId",$("#carry_paper_id").val());
+		    		$.ajax({
+		    			type:"POST",
+		    			data:$("form").serialize(),
+		    			data:formData,
+		    			processData:false,
+		    			contentType:false,
+		    			url:baseURL+"ConferenceRegister",
+		    			success:function(result){
+		    				validate_result(result);
+		    			},
+		    			error:function(){
+		    			    alert("ajax fail...");
+		    			   }
+		    		});
+	    		}
+	    		else
+	    		{
+	    			alert("Format error");
+	    		}
+	    	});
+	    	
+	    	function validate_result(result){
+	    		if(result.code=="200")
+	    		{
+	    			alert("参会人注册成功！现在带您前往支付页进行付款");
+	    			window.location.href = baseURL+"cn_pay.html";
+	    		}
+	    		else
+	    		{
+	    			var msgs = result.msg;
+	    			for(var message in msgs)
+	    			{
+	    				show_validate_info("#"+message,"error",msgs[message]);
+	    			}
+	    		}
+	    	}
+	    	function validate_form(){
+	    		var errorFlag = false;
+    			var UserName = $("#name").val();
+    			var regName = /^[a-zA-Z0-9\u2E80-\u9FFF_-\s]{2,10}$/;
+    			if(UserName == "")
+    			{
+    				show_validate_info("#name","error","名字不能为空");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			if(!regName.test(UserName))
+	    			{
+	    				show_validate_info("#name","error","名字必须是2-10个由中文和英文字母组成的字符");
+	    				errorFlag = true;
+	    			}
+	    			else
+	    			{
+	    				show_validate_info("#name","success","");
+	    			}
+	    		}
+    			var UserEmail = $("#email").val();
+    			var regEmail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+    			if(UserEmail == "")
+    			{
+    				show_validate_info("#email","error","邮箱不能为空");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			if(!regEmail.test(UserEmail))
+	    			{
+	    				show_validate_info("#email","error","邮箱格式错误");
+	    				errorFlag = true;
+	    			}
+	    			else
+	    			{
+	    				show_validate_info("#email","success","");
+	    			}
+	    		}
+    			var nationality = $("#nationality").val();
+    			if(nationality == "")
+    			{
+    				show_validate_info("#nationality","error","国籍不能为空");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#nationality","success","");
+	    		}
+    			var affiliation = $("#affiliation").val();
+    			if(affiliation == "")
+    			{
+    				show_validate_info("#affiliation","error","机构不能为空");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#affiliation","success","");
+	    		}
+    			
+    			return errorFlag;
+	    	}
+	    	function show_validate_info(element,status,msg){
+	        		$(element).next("span").text(msg);
+	    	}
+	    </script>
+	</body>
+<style>
+	.form-horizontal{
+		margin: 60px auto;
+		width: 320px;
+	}
+	.form-border{
+		border: 1px solid #d8dee2;
+		border-radius: 5px;
+		padding-top: 20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		background-color:#F8F8F8;
+	}
+</style>
+</html>

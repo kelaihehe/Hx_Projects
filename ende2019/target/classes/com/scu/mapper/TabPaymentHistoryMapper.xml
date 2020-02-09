@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scu.mapper.TabPaymentHistoryMapper">
+  <resultMap id="BaseResultMap" type="com.scu.pojo.TabPaymentHistory">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="amount" jdbcType="DECIMAL" property="amount" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="pay_method" jdbcType="CHAR" property="payMethod" />
+    <result column="pay_account" jdbcType="VARCHAR" property="payAccount" />
+    <result column="pay_trader" jdbcType="VARCHAR" property="payTrader" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="conferenc_user_id" jdbcType="BIGINT" property="conferencUserId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="response_time" jdbcType="TIMESTAMP" property="responseTime" />
+    <result column="is_success" jdbcType="TINYINT" property="isSuccess" />
+    <result column="print_poster" jdbcType="TINYINT" property="printPoster" />
+    <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
+    <result column="serial_number" jdbcType="VARCHAR" property="serialNumber" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, amount, description, pay_method, pay_account, pay_trader, user_id, conferenc_user_id, 
+    create_time, response_time, is_success, print_poster, order_number, serial_number
+  </sql>
+  <select id="selectByExample" parameterType="com.scu.pojo.TabPaymentHistoryExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tab_payment_history
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tab_payment_history
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from tab_payment_history
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.scu.pojo.TabPaymentHistoryExample">
+    delete from tab_payment_history
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.scu.pojo.TabPaymentHistory">
+    insert into tab_payment_history (id, amount, description, 
+      pay_method, pay_account, pay_trader, 
+      user_id, conferenc_user_id, create_time, 
+      response_time, is_success, print_poster, 
+      order_number, serial_number)
+    values (#{id,jdbcType=BIGINT}, #{amount,jdbcType=DECIMAL}, #{description,jdbcType=VARCHAR}, 
+      #{payMethod,jdbcType=CHAR}, #{payAccount,jdbcType=VARCHAR}, #{payTrader,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=BIGINT}, #{conferencUserId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{responseTime,jdbcType=TIMESTAMP}, #{isSuccess,jdbcType=TINYINT}, #{printPoster,jdbcType=TINYINT}, 
+      #{orderNumber,jdbcType=VARCHAR}, #{serialNumber,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.scu.pojo.TabPaymentHistory">
+    insert into tab_payment_history
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="amount != null">
+        amount,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="payMethod != null">
+        pay_method,
+      </if>
+      <if test="payAccount != null">
+        pay_account,
+      </if>
+      <if test="payTrader != null">
+        pay_trader,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="conferencUserId != null">
+        conferenc_user_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="responseTime != null">
+        response_time,
+      </if>
+      <if test="isSuccess != null">
+        is_success,
+      </if>
+      <if test="printPoster != null">
+        print_poster,
+      </if>
+      <if test="orderNumber != null">
+        order_number,
+      </if>
+      <if test="serialNumber != null">
+        serial_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="payMethod != null">
+        #{payMethod,jdbcType=CHAR},
+      </if>
+      <if test="payAccount != null">
+        #{payAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="payTrader != null">
+        #{payTrader,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="conferencUserId != null">
+        #{conferencUserId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="responseTime != null">
+        #{responseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isSuccess != null">
+        #{isSuccess,jdbcType=TINYINT},
+      </if>
+      <if test="printPoster != null">
+        #{printPoster,jdbcType=TINYINT},
+      </if>
+      <if test="orderNumber != null">
+        #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="serialNumber != null">
+        #{serialNumber,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.scu.pojo.TabPaymentHistoryExample" resultType="java.lang.Long">
+    select count(*) from tab_payment_history
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tab_payment_history
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.amount != null">
+        amount = #{record.amount,jdbcType=DECIMAL},
+      </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payMethod != null">
+        pay_method = #{record.payMethod,jdbcType=CHAR},
+      </if>
+      <if test="record.payAccount != null">
+        pay_account = #{record.payAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payTrader != null">
+        pay_trader = #{record.payTrader,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        user_id = #{record.userId,jdbcType=BIGINT},
+      </if>
+      <if test="record.conferencUserId != null">
+        conferenc_user_id = #{record.conferencUserId,jdbcType=BIGINT},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.responseTime != null">
+        response_time = #{record.responseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.isSuccess != null">
+        is_success = #{record.isSuccess,jdbcType=TINYINT},
+      </if>
+      <if test="record.printPoster != null">
+        print_poster = #{record.printPoster,jdbcType=TINYINT},
+      </if>
+      <if test="record.orderNumber != null">
+        order_number = #{record.orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.serialNumber != null">
+        serial_number = #{record.serialNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tab_payment_history
+    set id = #{record.id,jdbcType=BIGINT},
+      amount = #{record.amount,jdbcType=DECIMAL},
+      description = #{record.description,jdbcType=VARCHAR},
+      pay_method = #{record.payMethod,jdbcType=CHAR},
+      pay_account = #{record.payAccount,jdbcType=VARCHAR},
+      pay_trader = #{record.payTrader,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=BIGINT},
+      conferenc_user_id = #{record.conferencUserId,jdbcType=BIGINT},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      response_time = #{record.responseTime,jdbcType=TIMESTAMP},
+      is_success = #{record.isSuccess,jdbcType=TINYINT},
+      print_poster = #{record.printPoster,jdbcType=TINYINT},
+      order_number = #{record.orderNumber,jdbcType=VARCHAR},
+      serial_number = #{record.serialNumber,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.scu.pojo.TabPaymentHistory">
+    update tab_payment_history
+    <set>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=DECIMAL},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="payMethod != null">
+        pay_method = #{payMethod,jdbcType=CHAR},
+      </if>
+      <if test="payAccount != null">
+        pay_account = #{payAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="payTrader != null">
+        pay_trader = #{payTrader,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="conferencUserId != null">
+        conferenc_user_id = #{conferencUserId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="responseTime != null">
+        response_time = #{responseTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isSuccess != null">
+        is_success = #{isSuccess,jdbcType=TINYINT},
+      </if>
+      <if test="printPoster != null">
+        print_poster = #{printPoster,jdbcType=TINYINT},
+      </if>
+      <if test="orderNumber != null">
+        order_number = #{orderNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="serialNumber != null">
+        serial_number = #{serialNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.scu.pojo.TabPaymentHistory">
+    update tab_payment_history
+    set amount = #{amount,jdbcType=DECIMAL},
+      description = #{description,jdbcType=VARCHAR},
+      pay_method = #{payMethod,jdbcType=CHAR},
+      pay_account = #{payAccount,jdbcType=VARCHAR},
+      pay_trader = #{payTrader,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT},
+      conferenc_user_id = #{conferencUserId,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      response_time = #{responseTime,jdbcType=TIMESTAMP},
+      is_success = #{isSuccess,jdbcType=TINYINT},
+      print_poster = #{printPoster,jdbcType=TINYINT},
+      order_number = #{orderNumber,jdbcType=VARCHAR},
+      serial_number = #{serialNumber,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

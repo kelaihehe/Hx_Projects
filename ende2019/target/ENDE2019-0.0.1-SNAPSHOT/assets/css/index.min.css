@@ -1,0 +1,50 @@
+.news {
+    width: 58%;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.news .img-responsive{
+    padding-bottom: 20px
+}
+.news .mask {
+    height: 20%;
+}
+
+.recommend {
+    width: 58%;
+    margin: 0 auto;
+    margin: 3.25em auto
+}
+
+.recommend .mask {
+    height: 100%;
+}
+
+@media (min-width: 2048px) {
+    .news,.recommend {
+        width:1114px
+    }
+
+    .news .mask {
+        line-height: 106px
+    }
+
+    .recommend .mask {
+        line-height: 341px
+    }
+}
+
+@media (max-width: 1024px) {
+    .news,.recommend {
+        width:78%
+    }
+
+    .news .mask {
+        line-height: 62px
+    }
+
+    .recommend .mask {
+        line-height: 236px
+    }
+}
+

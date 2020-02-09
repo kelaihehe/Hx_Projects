@@ -1,0 +1,83 @@
+<div class="header-top">
+  	<div class="logo">
+	    <a href="javascript:void(0);">
+	    	<div class="logo-text">
+	    		<span class="big">Welcome to ENDE 2019</span>
+	    	</div>
+	    </a>
+    </div>
+    <div class="search">
+	  	<div class="input-group">
+	  		<input class="form-search form-control" placeholder="Search" type="search">
+	  		<span class="input-group-btn">
+	  			<button onclick="search();" type="submit" value="Search" class="button js-form-submit form-submit btn-primary btn icon-only" name="">
+	  				<span class="sr-only">Search</span><span class="icon glyphicon glyphicon-search" aria-hidden="true"></span>
+	  			</button>
+	  		</span>
+	  	</div>
+    </div>
+</div>
+
+<div class="header-nav" style="position: absolute;">
+    <!--main nav begin-->
+    <nav>
+        <ul>
+            <li class="active">
+                    <a href="javascript:void(0);" onclick="loadPage('main.html');">Home</a>
+            </li>
+            <li class="">
+                    <a href="javascript:void(0);" onclick="loadPage('general.html');" class="submenu" data-control="product">General Information</a>
+            </li>
+            <li class="">
+                    <a href="javascript:void(0);" onclick="loadPage('registration.html');" class="submenu" data-control="support">Registration</a>
+            </li>
+            <li class="">
+                    <a href="javascript:void(0);" onclick="loadPage('authors.html');">Authors Information</a>
+            </li>
+            <li class="">
+                    <a href="javascript:void(0);" onclick="loadPage('program.html');">Program</a>
+            </li>
+            <li class="">
+                    <a href="javascript:void(0);" onclick="loadPage('contact.html');">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <!--main nav end-->
+	</div>
+</div>
+<!--assistant begin-->
+<div class="site-assistant">
+    <div class="language">
+		<select id="switch-language">
+			<option selected="selected" value="0">English</option>
+			<option value="1">中文</option>
+		</select>
+  	</div>
+  	<div class="Register-Login-container" id="Register-Login" >
+  		<div class="Register" id="Register">
+  			<a href="register.html">Register</a>
+  		</div>
+  		<div class="Login" id="Login">
+  			<a href="login.html">Login</a>
+  		</div>
+  		<div class="userButton" id="userButton" style="display: none;">
+      		<select onchange="redirect(this)">
+      			<!--<option><a href="javascript:void(0);" onclick="redirect('showPapers.html');">投递稿件</a></option>
+      			<option><a href="javascript:void(0);" onclick="redirect('showPapers.html');">查看稿件</a></option>-->
+      			<option selected>Paper</option>
+      			<option value="contribute.html">Submit</option>
+      			<option value="showPapers.html">View</option>
+    		</select>
+  		</div>
+  	</div>
+  	
+    <!--<a href="javascript:;" class="assistant-switch"><img src="./assets/images/icon-assistant-open.jpg" data-icon-open="./assets/images/icon-assistant-open.jpg" data-icon-close="./assets/images/icon-assistant-close.jpg" class="img-responsive">123</a>
+    <ul>
+        <li>
+            <a href="javascript:;" class="assistant-wechat">
+                <img src="./assets/images/qrcode-wechat-top.png" class="center-block img-responsive" />
+                <span>关注微信</span>
+            </a>
+        </li>
+    </ul>-->
+</div>

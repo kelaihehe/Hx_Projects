@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<!-- jquery 在前面-->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap -->
+    <link href="statics/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="statics/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style>
+			.content{
+				width: 936px;
+				background: #fff;
+				position: relative;
+				margin: 30px auto;
+				padding: 20px;
+			}
+			.content .reg-intro-text{
+				color: #999
+			}
+			.content .top{
+				width: 100%;
+				float: left;
+				position: relative;
+			}
+			.content .reg-description-text{
+				color: #999
+			}
+			.content .header{
+				margin: 0 20px 0;
+				min-height: 50px;
+				position: relative;
+				width: 896px;
+			}
+			.content .logoRight{
+				display: inline-block;
+				width: 300px;
+				vertical-align: middle;
+				padding-left: 30px;
+				line-height: 1.8em;
+				color: #6E8EA5
+			}
+			.content .middle {
+				padding: 10px 20px;
+				clear: both;
+				position: relative;
+			}
+			.content h1{
+				z-index: 1000;
+				padding: 30px 0 20px;
+				clear: both;
+				color: #46c2ba;
+				text-align: center;
+			}
+			.content .section-header{
+				color: #6E8EA5;
+				background: #AAD5EE;
+				font-size: 1.6em;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				padding: 5px;
+			}
+			.content .reg-process-content{
+				padding: 10px 0;
+				float: left;
+				width: 100%;
+			}
+			.content .reg-confirmation-login{
+				margin: 0 0 15px 0;
+				float: left;
+				width: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			.content .reg-field-container{
+				background: #E5F2FA;
+				margin: 0 0 2px 0;
+				padding: 5px 10px 3px 10px;
+				overflow: hidden;
+				float: left;
+				width: 99%;
+				position: relative;
+			}
+			.content .reg-process-row{
+				float: left;
+				width: 100%;
+			}
+			.content .reg-field-left-column{
+				width: 40%;
+				float: left;
+				text-align: right;
+				padding: 0 10px 0 0;
+				font-weight: bold;
+				color: #cc0000;
+			}
+			.gray{
+				color: #999;
+			}
+			.errorNotice{
+				color: red;
+				padding-left: 10px;
+			}
+			</style>
+	</head>
+	<body background="assets/images/803120d8ff16b0f897a8e705fc44d1fb_1_180211222526_1.jpg" style="background-size: cover;">
+		<div class="content form-page custom-image-header">
+			<div class="top">
+				<a href="/cn_index.html"><img src="./assets/images/logo.png" alt=""></a>
+				<div class="logoRight">
+						<p>第24届国际电磁无损评估研讨会 <br>
+							(ENDE2019)<br>
+							四川成都龙之梦酒店<br>
+							9月11日 - 14日
+						</p>
+				</div>
+			</div>
+			<div class="bottom clearfix">
+				<div class="clearfix">
+					<h1>ENDE 2019</h1>
+					<div class="reg-intro-text">
+						<p>
+							<strong style="text-align: justify;">
+								<span style="font-family: Arial, Helvetica, sans-serif;">
+		
+									<em>
+										&nbsp;<br>温馨提示：<br>
+									</em>
+								</span>
+							</strong>
+							<span style="text-align: justify; font-family: Arial, Helvetica, sans-serif;">
+								<br>
+								请先进行网站注册，然后可以在登录的状态下进行其他操作，如投稿、查看稿件状态、会议注册等。一个网站ID可以进行多个会议注册和缴费操作。
+								<br>
+		
+							</span>
+						</p>
+					</div>
+					<h2 class="section-header">
+						<span>用户信息</span>
+					</h2>
+					<div class="reg-process-content">
+						<div class="reg-description-text">
+							<p><span>
+									<strong>输入您的注册信息</strong>
+		
+								</span></p>
+						</div>
+						<div class="reg-confirmation-login reg-section">
+							<div class="reg-confirmation-login reg-section">
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 用户名 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="name" placeholder="2-10位中文/字母和数字">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 邮箱 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="email" placeholder="请按照邮箱格式输入">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* 密码 :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="password" id="password" placeholder="6-15位字母和数字">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+										<div class="reg-process-row">
+											<div class="reg-field-left-column">
+												<label class="reg-required-field" for="">* 确认密码 :</label>
+											</div>
+											<div class="reg-field-right-column">
+												<input type="password" id="repeatpassword" placeholder="6-15位字母和数字">
+												<span class="errorNotice"></span>
+											</div>
+										</div>
+								</div>
+								
+		
+								<div class="register-btn-bottom">
+									<div class="already-registered-link">
+										<span>
+											<a class="ListText2" href=""></a>
+										</span>
+									</div>
+									<div class="register-btn-bottom">
+		
+									</div>
+								</div>
+							</div>
+		
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="text-center">
+				<button id="RegisterSubmit" class="btn btn-primary" style="width:150px;">注册</button>
+		
+			</div>
+			<div class="progress" style="margin-top: 30px; display: none">
+				<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+					0% Complete
+				</div>
+			</div>
+		</div>
+	   <script src="./assets/js/common.js"></script>
+	   <script type="text/javascript">
+	   		var n = 0
+	   		function progressGo(){
+				if (n >= 76) {
+					return
+				}
+				n+=1
+				$(".progress-bar:eq(0)").attr("aria-valuenow",n).css("width",n+"%").html(n+"% Complete");
+			} 
+			   $("#RegisterSubmit").click(function(){
+		   		if(!validate_form())  //若验证成功，则发送请求
+		   		{
+					$(".progress:eq(0)").css("display","block");
+					clearInterval(Ti);
+					progressGo();
+					var Ti = setInterval(progressGo,100);
+		               var name = $("#name").val();
+		               var email = $("#email").val();
+		               var password = $("#password").val();
+		               var repeatpassword = $("#repeatpassword").val();
+			    		$.ajax({
+			    			type:"POST",
+			    			url:baseURL+"register",
+			    			data:{"name":name,"email":email,"password":password},
+			    			success:function(result){
+								clearInterval(Ti);
+							$(".progress-bar:eq(0)").attr("aria-valuenow",100).css("width","100%").html("100% Complete");
+							$(".progress:eq(0)").css("display","none");
+			    				validate_result(result);
+			    			},
+			    			error:function(){
+								clearInterval(Ti);
+							$(".progress:eq(0)").css("display","none");
+							n = 0;
+			    			    alert("ajax fail...");
+			    			   }
+			    		});
+		   		}
+		   		else
+		   		{
+		   			alert("Format error");
+		   		}
+		   	});
+		   	
+		   	function validate_result(result){
+		   		if(result.code=="200")
+		   		{
+		   			alert("注册成功！确认邮件已发送至您的注册邮箱，请点击其中链接激活账户（请注意确认邮件可能被您的邮箱过滤系统误判为垃圾邮件）");
+		   			window.location.href = baseURL+"cn_index.html";
+		   		}
+		   		else
+		   		{
+		   			var msgs = result.msg;
+		   			for(var message in msgs)
+		   			{
+		   				show_validate_info("#"+message,"error",msgs[message]);
+		   			}
+		   		}
+		   	}
+		   	function validate_form(){
+		   		var errorFlag = false;
+					var UserName = $("#name").val();
+					var regName = /^[a-zA-Z0-9\u2E80-\u9FFF_-\s]{2,10}$/;
+					if(UserName == "")
+					{
+						show_validate_info("#name","error","用户名不能为空");
+						errorFlag = true;
+					}
+					else
+					{
+		   			if(!regName.test(UserName))
+		   			{
+		   				show_validate_info("#name","error","用户名必须由2-10个中文、英文字母和数字组成的字符");
+		   				errorFlag = true;
+		   			}
+		   			else
+		   			{
+		   				show_validate_info("#name","success","");
+		   			}
+		   		}
+					var UserEmail = $("#email").val();
+					var regEmail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/; 
+					if(UserEmail == "")
+					{
+						show_validate_info("#email","error","邮箱不能为空");
+						errorFlag = true;
+					}
+					else
+					{
+		   			if(!regEmail.test(UserEmail))
+		   			{
+		   				show_validate_info("#email","error","邮箱格式错误");
+		   				errorFlag = true;
+		   			}
+		   			else
+		   			{
+		   				show_validate_info("#email","success","");
+		   			}
+		   		}
+					var UserPassword = $("#password").val();
+					var regPassword = /^[a-zA-Z0-9_-]{6,15}$/;
+					if(UserPassword == "")
+					{
+						show_validate_info("#password","error","密码不能为空");
+						errorFlag = true;
+					}
+					else
+					{
+		               var repeatpassword = $("#repeatpassword").val();
+						if(!regPassword.test(UserPassword))
+		   			{
+		   				show_validate_info("#password","error","密码应该由6-15个字母和数字组成");
+		   				errorFlag = true;
+		   			}
+		   			else if(repeatpassword != UserPassword){
+		                   show_validate_info("#repeatpassword","error","验证密码与设置密码不同");
+		                   errorFlag = true;
+						}
+						else
+		   			{
+		   				show_validate_info("#password","success","");
+		   			}    				
+					}
+					return errorFlag;
+		   	}
+		   	function show_validate_info(element,status,msg){
+	        		$(element).next("span").text(msg);
+		   	}
+	    </script>
+	</body>
+<style>
+	.form-horizontal{
+		margin: 60px auto;
+		width: 320px;
+	}
+	.form-border{
+		border: 1px solid #d8dee2;
+		border-radius: 5px;
+		padding-top: 20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		background-color:#F8F8F8;
+	}
+</style>
+</html>

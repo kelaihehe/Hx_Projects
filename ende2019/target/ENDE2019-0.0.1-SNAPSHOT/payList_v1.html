@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./statics/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/index.min.css">
+    <link rel="stylesheet" href="./assets/css/common.min.css_vv20180704.css">
+    <style>
+        .content{
+			width: 936px;
+			background: #fff;
+			position: relative;
+			margin: 30px auto;
+			padding: 20px;
+		}
+        .success{
+            color: green
+        }
+       
+    </style>
+    <title>pay</title>
+</head>
+<body>
+<div class="content">
+    <h2 class="h2Title">支付列表</h2>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>订单号</th>
+                <th>金额</th>
+                <th>支付方式</th>
+                <th>支付时间</th>
+                <th>支付状态</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="orderId"></td>
+                <td id="amount"></td>
+                <td id="payMethod"></td>
+                <td id="payTime"></td> <!--2019-1-10 19:22:12-->
+                <td><span class="success">成功</span></td>
+                <td>
+                    <button class="btn btn-primay btn-sm" data-toggle="modal" data-target="#myModal" id="Paymentdetails">订单详情</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">订单详情</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered table-hover" id="PaydetailsTable">
+                    <col style="width:30%"><col style="width:70%">
+                    <thead>
+                    	<tr>
+                            <th>订单号</th>
+                            <th>支付人姓名</th>
+                            <th>会议注册人姓名</th>
+                            <th>注册类型</th>
+                            <th>是否打印海报</th>
+                            <th>支付金额</th>
+                            <th>支付方式</th>
+                            <th>支付时间</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	
+                        <!--<tr>
+                            <th>订单号</th>
+                            <td>dkak32lrk3l2sadsadsa23423</td>
+                        </tr>
+                        <tr>
+                            <th>注册人姓名</th>
+                            <td>张三</td>
+                        </tr>
+                        <tr>
+                            <th>注册类型</th>
+                            <td>学生</td>
+                        </tr>
+                        <tr>
+                            <th>是否打印海报</th>
+                            <td>是</td>
+                        </tr>
+                        <tr>
+                            <th>支付金额</th>
+                            <td>3500.00</td>
+                        </tr>
+                        <tr>
+                            <th>支付方式</th>
+                            <td>
+                                <img src="./assets/images/zfb.jpg" alt="" width="20%">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>支付时间</th>
+                            <td>2019-1-10 19:22:12</td>
+                        </tr>
+                        <tr>
+                            <th>支付状态</th>
+                            <td><span class="sucess">成功</span></td>
+                        </tr>-->
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+          </div>
+        </div>
+</div>
+
+
+<script src="./statics/jquery/3.2.1/jquery.min.js"></script>
+<script src="./statics/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="./assets/js/common.js"></script>
+<script>
+var orderId;
+$(function(){
+    orderId = getQueryString("orderNumber");
+    $.ajax({
+			url:baseURL+"queryPaymentInfoByOrder",
+			data:"orderId="+orderId,
+			type:"GET",
+			async:false,
+			success:function(result){
+				//解析显示支付基本信息
+				paymentInfo_table(result);
+			},
+			error:function(){
+	    		alert("ajax fail...");
+	    		
+	    	}
+	});
+})
+function paymentInfo_table(result)
+{
+	$("#orderId").html(orderId);
+	$("#amount").html(result.data.paymentHistory.amount);
+	$("#payMethod").html(result.data.paymentHistory.payMethod);
+	$("#payTime").html(getTime(result.data.paymentHistory.responseTime));
+}
+
+$(document).on("click","#Paymentdetails",function(){
+	$.ajax({
+		url:baseURL+"queryPaymentdetails",
+		data:"orderId="+orderId,
+		type:"GET",
+		async:false,
+		success:function(result){
+			//解析显示支付详细信息
+			paymentdetails_table(result);
+		},
+		error:function(){
+    		alert("ajax fail...");	
+    	}
+	});
+})
+
+function paymentdetails_table(result)
+{
+	$("#PaydetailsTable tbody").empty();
+	var paymentList = result.data.paymentHistoryList;
+	var WebName = getCookie("username");
+	$.each(paymentList,function(index,item){
+		var ordernumber = $("<td></td>").append(orderId);//订单号  注册人姓名  注册类型 是否打印海报 支付金额  支付时间
+		var payUserName =  $("<td></td>").append(WebName);//网站用户的姓名
+		var ConferenceUsername = $("<td></td>").append(item.description); //将注册人姓名存放在Description字段了
+		var registerType = $("<td></td>").append(item.payAccount); //将注册类型存放在PayAccount字段
+		if(item.printPoster == "1"){
+			var printPoster = $("<td></td>").append("是"); //是否打印海报
+		}
+		else{
+			var printPoster = $("<td></td>").append("否"); //是否打印海报
+		}
+		var amount = $("<td></td>").append(item.amount); //支付金额
+		var responseTime = $("<td></td>").append(getTime(item.responseTime)); //支付时间
+		var payMethod = $("<td></td>").append(item.payMethod); //支付时间
+		
+		$("<tr></tr>").append(ordernumber)
+					.append(payUserName)
+					.append(ConferenceUsername)
+					.append(registerType)
+					.append(printPoster)
+					.append(amount)
+					.append(payMethod)
+					.append(responseTime).appendTo("#PaydetailsTable tbody");
+	});
+}
+//获取url参数
+function getQueryString(name) { 
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+    var r = window.location.search.substr(1).match(reg); 
+    if (r != null) return unescape(r[2]); 
+    return null; 
+} 
+
+//将数据库取出时间进行格式化 
+function getTime(datetime){
+	var transTime = new Date(datetime);
+	return transTime.toLocaleDateString()+' '+transTime.toTimeString().substring(0,8);
+}
+</script>
+</body>
+</html>

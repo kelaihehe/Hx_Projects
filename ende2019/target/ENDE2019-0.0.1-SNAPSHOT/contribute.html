@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<!-- jquery 在前面-->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap -->
+    <link href="statics/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="statics/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style>
+			.content{
+				width: 936px;
+				background: #fff;
+				position: relative;
+				margin: 30px auto;
+				padding: 20px;
+			}
+			.content .reg-intro-text{
+				color: #999
+			}
+			.content .top{
+				width: 100%;
+				float: left;
+				position: relative;
+			}
+			.content .reg-description-text{
+				color: #999
+			}
+			.content .header{
+				margin: 0 20px 0;
+				min-height: 50px;
+				position: relative;
+				width: 896px;
+			}
+			.content .logoRight{
+				display: inline-block;
+				width: 300px;
+				vertical-align: middle;
+				padding-left: 30px;
+				line-height: 1.8em;
+				color: #6E8EA5
+			}
+			.content .middle {
+				padding: 10px 20px;
+				clear: both;
+				position: relative;
+			}
+			.content h1{
+				z-index: 1000;
+				padding: 30px 0 20px;
+				clear: both;
+				color: #46c2ba;
+				text-align: center;
+			}
+			.content .section-header{
+				color: #6E8EA5;
+				background: #AAD5EE;
+				font-size: 1.6em;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				padding: 5px;
+			}
+			.content .reg-process-content{
+				padding: 10px 0;
+				float: left;
+				width: 100%;
+			}
+			.content .reg-confirmation-login{
+				margin: 0 0 15px 0;
+				float: left;
+				width: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			.content .reg-field-container{
+				background: #E5F2FA;
+				margin: 0 0 2px 0;
+				padding: 5px 10px 3px 10px;
+				overflow: hidden;
+				float: left;
+				width: 99%;
+				position: relative;
+			}
+			.content .reg-process-row{
+				float: left;
+				width: 100%;
+			}
+			.content .reg-field-left-column{
+				width: 40%;
+				float: left;
+				text-align: right;
+				padding: 0 10px 0 0;
+				font-weight: bold;
+				color: #cc0000;
+			}
+			.gray{
+				color: #999;
+			}
+			.errorNotice{
+				color: red;
+				padding-left: 10px;
+			}
+			</style>
+	</head>
+	<body background="assets/images/803120d8ff16b0f897a8e705fc44d1fb_1_180211222526_1.jpg" style="background-size: cover;">
+		<div class="content form-page custom-image-header">
+			<div class="top">
+				<a href="/index.html"><img src="./assets/images/logo.png" alt=""></a>
+				<div class="logoRight">
+					<p>The 24th International Workshop on
+						Electromagnetic Nondestructive Evaluation
+						Longemont Hotels in Chengdu, China
+						September 11-14, 2019
+					</p>
+				</div>
+			</div>
+			<div class="bottom clearfix">
+				<div class="clearfix">
+					<h1>ENDE 2019</h1>
+					<div class="reg-intro-text">
+						<p>
+							<strong style="text-align: justify;">
+								<span style="font-family: Arial, Helvetica, sans-serif;">
+		
+									<em>
+										&nbsp;<br>Note to Authors: <br>
+									</em>
+								</span>
+							</strong>
+							<span style="text-align: justify; font-family: Arial, Helvetica, sans-serif;">
+								<br>
+								Please register the website first, then you can do other operations in the state of login, such as submitting, viewing the status of contributions, meeting registration, etc. A website ID can register and pay for multiple registrations.
+								<br>
+		
+							</span>
+						</p>
+					</div>
+					<h2 class="section-header">
+						<span>Manuscript upload</span>
+					</h2>
+					<div class="reg-process-content">
+						<div class="reg-description-text">
+							<p><span>
+									<strong>Enter information and upload a manuscript</strong>
+		
+								</span></p>
+						</div>
+						<div class="reg-confirmation-login reg-section">
+							<div class="reg-confirmation-login reg-section">
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="" >* Name of Author :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="name">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="" >* Email :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="email">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Nationality :											:</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="nationality">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Name of University/Organization :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="affiliation">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Title of Manuscript :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="title">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Type of Report :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<select name="" id="type" style="width:175px;">
+												<option value="1">Oral Presentation</option>
+												<option value="2">Poster Presentation</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Upload the Manuscript :</label>
+										</div>
+										<div class="reg-field-right-column">
+
+											<button class="fileUpload"><label for="file" class="fileUploads">choose</label></button> 
+											<span class="fileNotice"></span>
+											<input type="file"  placeholder="file" id="file" name="file" style="display:none">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+									<div class="progress" style="margin-top: 30px; float: left; display: none; width: 100%">
+										<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+											0% Complete
+										</div>
+									</div>
+								</div>
+								
+		
+								<div class="register-btn-bottom">
+									<div class="already-registered-link">
+										<span>
+											<a class="ListText2" href=""></a>
+										</span>
+									</div>
+									<div class="register-btn-bottom">
+		
+									</div>
+								</div>
+
+							</div>
+		
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="text-center">
+				<button class="btn btn-primary" id="PaperSubmit" style="width:150px;">Submit</button>
+		
+			</div>
+		
+		</div>
+	   <script src="./assets/js/common.js"></script>
+	   <script type="text/javascript">
+			var n = 0
+	   		function progressGo(){
+				if (n >= 90) {
+					return
+				}
+				n+=1
+				$(".progress-bar:eq(0)").attr("aria-valuenow",n).css("width",n+"%").html(n+"% Complete");
+			}
+
+			$("#file").change(function(){
+				var fileName = $("#file")[0].files[0].name
+				$(".fileNotice").html("Ready to Submit：" + fileName)
+			})
+	    	$("#PaperSubmit").click(function(){
+	    		if(!validate_form())  //若验证成功，则发送请求
+	    		{
+					$(".progress:eq(0)").css("display","block");
+					clearInterval(Ti);
+					progressGo();
+					var Ti = setInterval(progressGo,100);
+
+	    			var formData = new FormData();
+	    			formData.append("name",$("#name").val());
+	    			formData.append("email",$("#email").val());
+	    			formData.append("nationality",$("#nationality").val());
+	    			formData.append("affiliation",$("#affiliation").val());
+	    			formData.append("title",$("#title").val());
+	    			formData.append("type",$("#type").val());
+	    			formData.append("file",$("#file")[0].files[0]);	    			
+		    		$.ajax({
+		    			type:"POST",
+		    			url:baseURL+"contribute",
+		    			data:formData,
+		    			processData:false,
+		    			contentType:false,
+		    			success:function(result){
+							alert("Submission Success！！！");
+							sendEmailAfterContribute(result.data.strNumber);
+							clearInterval(Ti);
+							$(".progress-bar:eq(0)").attr("aria-valuenow",100).css("width","100%").html("100% Complete");
+							$(".progress:eq(0)").css("display","none");
+		    				window.location.href = baseURL+"index.html";
+		    			},
+		    			error:function(){
+							clearInterval(Ti);
+							$(".progress:eq(0)").css("display","none");
+							n = 0;
+		    			    alert("Contribute Fail...");
+		    			   }
+		    		});
+	    		}
+	    		else
+	    		{
+	    			alert("Format error");
+	    		}
+	    	});
+	    	
+		function sendEmailAfterContribute(strNumber){
+	    		$.ajax({
+		    			type:"POST",
+		    			url:baseURL+"SendEmailAfterContribute",
+		    			data:{"email":$("#email").val(),"strNumber":strNumber},
+		    			async:true, //异步处理
+		    			success:function(result){
+		    				//alert("sendEmailAfterContribute Success...");
+		    			},
+		    			error:function(){
+		    			    //alert("sendEmailAfterContribute Fail...");
+		    			}
+		    		});
+	    	}
+
+	    	function validate_form(){
+	    		var errorFlag = false;
+	    		
+				var UserName = $("#name").val();
+    			if(UserName == "")
+    			{
+    				show_validate_info("#name","error","Name cannot be empty");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#name","success","");
+	    		}
+    			
+    			var UserEmail = $("#email").val();
+    		//	var regEmail = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+    			var regEmail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+    			if(UserEmail == "")
+    			{
+    				show_validate_info("#email","error","Email cannot be empty");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			if(!regEmail.test(UserEmail))
+	    			{
+	    				show_validate_info("#email","error","Error in mail format");
+	    				errorFlag = true;
+	    			}
+	    			else
+	    			{
+	    				show_validate_info("#email","success","");
+	    			}
+	    		}
+    			
+    			var nationality = $("#nationality").val();
+    			if(nationality == "")
+    			{
+    				show_validate_info("#nationality","error","nationality cannot be empty");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#nationality","success","");
+	    		}
+    			
+    			var affiliation = $("#affiliation").val();
+    			if(affiliation == "")
+    			{
+    				show_validate_info("#affiliation","error","affiliation cannot be empty");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#affiliation","success","");
+	    		}
+    			
+    			var title = $("#title").val();
+    			if(title == "")
+    			{
+    				show_validate_info("#title","error","the title of paper cannot be empty");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#title","success","");
+	    		}
+    			
+    			if($("#file").val()=="")   //需要先判断是否空，再去定义那些变量，不然（如果文件为空，那么定义出来的都是null，这样会出错）
+    			{
+    				show_validate_info("#file","error","please click submit");
+    			}
+    			else
+    			{    				
+	    			var uploadFile = $("#file")[0].files[0];
+	    			var fileSize = uploadFile.size;   //文件大小,以M为单位
+	    			var fileName = uploadFile.name;
+	    			var sp = fileName.lastIndexOf(".");  //文件名中“.”的位置
+	    			var sufix = fileName.substring(sp+1).toUpperCase(); //文件名后缀大写												
+					if(fileSize>104857600)
+					{
+						show_validate_info("#file","error","Manuscript size can not exceed 100M! Please re-upload");
+						errorFlag = true;
+					}
+					else
+					{
+						if(sufix!="PDF")
+		    			{
+		    				show_validate_info("#file","error","The manuscript format is incorrect. Please re-select the file in PDF format.");
+		    				$("#file").val()="";
+		    				errorFlag = true;
+		    			}
+		    			else
+		    			{
+		    				show_validate_info("#file","success","");
+		    			}
+					}
+				}
+
+    			
+    			return errorFlag;
+	    	}
+	    	
+	    	function show_validate_info(element,status,msg){
+	        		$(element).next("span").text(msg);
+	    	}
+	    </script>
+	</body>
+
+</html>

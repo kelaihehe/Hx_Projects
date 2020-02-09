@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<!-- jquery 在前面-->
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Bootstrap -->
+    <link href="statics/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="statics/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style>
+			.content{
+				width: 936px;
+				background: #fff;
+				position: relative;
+				margin: 30px auto;
+				padding: 20px;
+			}
+			.content .reg-intro-text{
+				color: #999
+			}
+			.content .top{
+				width: 100%;
+				float: left;
+				position: relative;
+			}
+			.content .reg-description-text{
+				color: #999
+			}
+			.content .header{
+				margin: 0 20px 0;
+				min-height: 50px;
+				position: relative;
+				width: 896px;
+			}
+			.content .logoRight{
+				display: inline-block;
+				width: 300px;
+				vertical-align: middle;
+				padding-left: 30px;
+				line-height: 1.8em;
+				color: #6E8EA5
+			}
+			.content .middle {
+				padding: 10px 20px;
+				clear: both;
+				position: relative;
+			}
+			.content h1{
+				z-index: 1000;
+				padding: 30px 0 20px;
+				clear: both;
+				color: #46c2ba;
+				text-align: center;
+			}
+			.content .section-header{
+				color: #6E8EA5;
+				background: #AAD5EE;
+				font-size: 1.6em;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				padding: 5px;
+			}
+			.content .reg-process-content{
+				padding: 10px 0;
+				float: left;
+				width: 100%;
+			}
+			.content .reg-confirmation-login{
+				margin: 0 0 15px 0;
+				float: left;
+				width: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			.content .reg-field-container{
+				background: #E5F2FA;
+				margin: 0 0 2px 0;
+				padding: 5px 10px 3px 10px;
+				overflow: hidden;
+				float: left;
+				width: 99%;
+				position: relative;
+			}
+			.content .reg-process-row{
+				float: left;
+				width: 100%;
+			}
+			.content .reg-field-left-column{
+				width: 40%;
+				float: left;
+				text-align: right;
+				padding: 0 10px 0 0;
+				font-weight: bold;
+				color: #cc0000;
+			}
+			.gray{
+				color: #999;
+			}
+			.errorNotice{
+				color: red;
+				padding-left: 10px;
+			}
+			</style>
+	</head>
+	<body background="assets/images/803120d8ff16b0f897a8e705fc44d1fb_1_180211222526_1.jpg" style="background-size: cover;">
+		<div class="content form-page custom-image-header">
+			<div class="top">
+				<a href="/index.html"><img src="./assets/images/logo.png" alt=""></a>
+				<div class="logoRight">
+					<p>The 24th International Workshop on
+						Electromagnetic Nondestructive Evaluation
+						Longemont Hotels in Chengdu, China
+						September 11-14, 2019
+					</p>
+				</div>
+			</div>
+			<div class="bottom clearfix">
+				<div class="clearfix">
+					<h1>ENDE 2019</h1>
+					<div class="reg-intro-text">
+						<p>
+							<strong style="text-align: justify;">
+								<span style="font-family: Arial, Helvetica, sans-serif;">
+		
+									<em>
+										&nbsp;<br>Note to Users: <br>
+									</em>
+								</span>
+							</strong>
+							<span style="text-align: justify; font-family: Arial, Helvetica, sans-serif;">
+								<br>
+								In this page, you can register the attendee for the conference, please make sure the information of attendee is correct. This page will automatically switch to the payment page when registration is finished.
+								<br>
+		
+							</span>
+						</p>
+					</div>
+					<h2 class="section-header">
+						<span>registration of attendee</span>
+					</h2>
+					<div class="reg-process-content">
+						<div class="reg-description-text">
+							<p><span>
+									<strong>Please enter the information of the conference attendee below.</strong>
+		
+								</span></p>
+						</div>
+						<div class="reg-confirmation-login reg-section">
+							<div class="reg-confirmation-login reg-section">
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Name:</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="name">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Gender:</label>
+										</div>
+										<div class="reg-field-right-column">
+											<select name="" id="gender" style="width:175px;">
+												<option value="1">male</option>
+												<option value="2">female</option>
+												<option value="3">transgender</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Email :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="email">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Title :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<select name="" id="position" style="width:175px;">
+												<option value="1">Professor</option>
+												<option value="2">Dr.</option>
+												<option value="3">Mr.</option>
+												<option value="4">Ms.</option>
+												<option value="5">Miss</option>												
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Nationality :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="nationality">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+								</div>
+								<div class="reg-field-container">
+									<div class="reg-process-row">
+										<div class="reg-field-left-column">
+											<label class="reg-required-field" for="">* Name of Institution/Company :</label>
+										</div>
+										<div class="reg-field-right-column">
+											<input type="text" id="affiliation">
+											<span class="errorNotice"></span>
+										</div>
+									</div>
+                                </div>
+                                <div class="reg-field-container">
+                                    <div class="reg-process-row">
+                                        <div class="reg-field-left-column">
+                                            <label class="reg-required-field" for="">* Type of Registration :</label>
+                                        </div>
+                                        <div class="reg-field-right-column">
+                                            <select name="" id="is_student" style="width:175px;">
+                                                <option value="0">Regular</option>
+                                                <option value="1">Student</option>
+                                                <option value="2">Accomopanying Person</option>
+                                                <option value="3">Banquet ticket only</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="reg-field-container">
+                                    <div class="reg-process-row">
+                                        <div class="reg-field-left-column">
+                                            <label class="reg-required-field" for="">* Paper :</label>
+                                        </div>
+                                        <div class="reg-field-right-column">
+                                            <select name="" id="carry_paper_id" style="width:175px;">
+                                                <option value="0">None</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+								<div class="register-btn-bottom">
+									<div class="already-registered-link">
+										<span>
+											<a class="ListText2" href=""></a>
+										</span>
+									</div>
+									<div class="register-btn-bottom">
+		
+									</div>
+								</div>
+							</div>
+		
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		
+			<div class="text-center">
+				<button class="btn btn-primary" id="RegisterSubmit" style="width:150px;">Register</button>
+		
+			</div>
+		
+		</div>
+	   <script src="./assets/js/common.js"></script>
+	   <script type="text/javascript">
+	   		$(function(){
+    			show_paperInfo();
+    		})
+		   	function show_paperInfo(){
+	    		$.ajax({
+	    			url:baseURL+"queryPapersByUser",
+	    			type:"GET",
+	    			success:function(result){
+						paper_table(result);  //显示当前用户提交的所有的paper的name
+	    			},
+	    			error:function(){
+			    		alert("paper inquiry fail...");			    		
+			    	}
+	    		});
+	    	}
+		   	
+		   	function paper_table(result)
+		   	{
+		   		
+		   		var papers = result.data.PaperList;
+		   		$.each(papers, function(index,item) {
+		   			var Paper_title = $("<option></option>").append(item.title).val(item.id); 
+		   			$("#carry_paper_id").append(Paper_title);	
+		   		});
+		   	}		   	
+		   	
+	    	$("#RegisterSubmit").click(function(){
+	    		
+	    		if(!validate_form())  //若验证成功，则发送请求
+	    		{
+	    			var formData = new FormData();
+	    			formData.append("name",$("#name").val());
+	    			formData.append("gender",$("#gender").val());
+	    			formData.append("email",$("#email").val());
+	    			formData.append("position",$("#position").val());
+	    			formData.append("nationality",$("#nationality").val());
+	    			formData.append("affiliation",$("#affiliation").val());
+	    			formData.append("isStudent",$("#is_student").val());
+	    			formData.append("carryPaperId",$("#carry_paper_id").val());
+		    		$.ajax({
+		    			type:"POST",
+		    			data:$("form").serialize(),
+		    			data:formData,
+		    			processData:false,
+		    			contentType:false,
+		    			url:baseURL+"ConferenceRegister",
+		    			success:function(result){
+		    				validate_result(result);
+		    			},
+		    			error:function(){
+		    			    alert("ajax fail...");
+		    			   }
+		    		});
+	    		}
+	    		else
+	    		{
+	    			alert("Format error");
+	    		}
+	    	});
+	    	
+	    	function validate_result(result){
+	    		if(result.code=="200")
+	    		{
+	    			alert("Attendee has been registred successfully! Now you can pay the registration fee");
+	    			window.location.href = baseURL+"pay.html";
+	    		}
+	    		else
+	    		{
+	    			var msgs = result.msg;
+	    			for(var message in msgs)
+	    			{
+	    				show_validate_info("#"+message,"error",msgs[message]);
+	    			}
+	    		}
+	    	}
+	    	function validate_form(){
+	    		var errorFlag = false;
+    			var UserName = $("#name").val();
+    			var regName = /^[a-zA-Z0-9\u2E80-\u9FFF_-\s]{2,10}$/;
+    			if(UserName == "")
+    			{
+    				show_validate_info("#name","error","User name cannot be empty");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			if(!regName.test(UserName))
+	    			{
+	    				show_validate_info("#name","error","Username format error, the length of username should be 2-10 English/characters/Digits");
+	    				errorFlag = true;
+	    			}
+	    			else
+	    			{
+	    				show_validate_info("#name","success","");
+	    			}
+	    		}
+    			var UserEmail = $("#email").val();
+    			var regEmail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+    			if(UserEmail == "")
+    			{
+    				show_validate_info("#email","error","Email cannot be empty");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			if(!regEmail.test(UserEmail))
+	    			{
+	    				show_validate_info("#email","error","Error in Email format");
+	    				errorFlag = true;
+	    			}
+	    			else
+	    			{
+	    				show_validate_info("#email","success","");
+	    			}
+	    		}
+    			var nationality = $("#nationality").val();
+    			if(nationality == "")
+    			{
+    				show_validate_info("#nationality","error","nationality cannot be empty");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#nationality","success","");
+	    		}
+    			var affiliation = $("#affiliation").val();
+    			if(affiliation == "")
+    			{
+    				show_validate_info("#affiliation","error","affiliation cannot be empty");
+    				errorFlag = true;
+    			}
+    			else
+    			{
+	    			show_validate_info("#affiliation","success","");
+	    		}
+    			
+    			return errorFlag;
+	    	}
+	    	function show_validate_info(element,status,msg){
+	        		$(element).next("span").text(msg);
+	    	}
+	    </script>
+	</body>
+<style>
+	.form-horizontal{
+		margin: 60px auto;
+		width: 320px;
+	}
+	.form-border{
+		border: 1px solid #d8dee2;
+		border-radius: 5px;
+		padding-top: 20px;
+		padding-left: 20px;
+		padding-right: 20px;
+		background-color:#F8F8F8;
+	}
+</style>
+</html>

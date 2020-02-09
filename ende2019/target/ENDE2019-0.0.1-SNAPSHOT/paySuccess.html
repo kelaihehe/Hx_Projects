@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./statics/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/index.min.css">
+    <link rel="stylesheet" href="./assets/css/common.min.css_vv20180704.css">
+    <style>
+        .content{
+			width: 936px;
+			background: #fff;
+			position: relative;
+			margin: 30px auto;
+			padding: 20px;
+		}
+        .content .glyphicon-ok{
+            font-size: 50px;
+            color: green;
+            padding: 20px 0
+        }
+        .content .glyphicon-remove{
+            font-size: 50px;
+            color: red;
+            padding: 20px 0
+        }
+        .content .zf{
+            color: green
+        }
+        .content .cz{
+            width: 300px;
+            margin: 100px auto 0;
+            display: flex;
+            justify-content: space-between
+        }
+		.hide{display:none;}
+    </style>
+    <title>pay</title>
+</head>
+<body>
+
+<div class="content">
+    
+    <div class="success text-center hide">
+        <p class="glyphicon glyphicon-ok"></p>
+
+        <p class="zf">您已支付成功</p>
+    </div>
+
+    <div class="cz">
+        <button class="btn btn-primary" id="queryPaymentHistory">查看支付记录</button>
+        <button class="btn btn-default back-home">返回主页</button>
+    </div>
+</div>
+
+
+<script src="./statics/jquery/3.2.1/jquery.min.js"></script>
+<script src="./statics/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="./assets/js/common.js"></script>
+<script type="text/javascript">
+var orderId;
+//初始化支付结果
++function(){
+	orderId = getQueryString("orderId");
+	//无法获取订单id
+	//orderId = "ENDE201904252207185176";
+	if(orderId == "" || orderId==null){
+		$('.zf').css('color', 'red');
+		$('.zf').html("无效的订单信息");
+		$(".glyphicon").removeClass('glyphicon-ok');
+		$(".glyphicon").addClass('glyphicon-remove');
+		$(".success").removeClass('hide');
+	} else {
+		$.get(baseURL+"payment/order?orderId="+orderId, function(response){
+			switch(response){
+			    //未知的订单新
+			    case "-1":
+			    	$('.zf').css('color', 'red');
+					$('.zf').html("无效的订单信息");
+					$(".glyphicon").removeClass('glyphicon-ok');
+					$(".glyphicon").addClass('glyphicon-remove');
+					$(".success").removeClass('hide');
+			    	break;
+			    //支付失败
+			    case "0":
+			    	$('.zf').css('color', 'red');
+					$('.zf').html("支付失败");
+					$(".glyphicon").removeClass('glyphicon-ok');
+					$(".glyphicon").addClass('glyphicon-remove');
+					$(".success").removeClass('hide');
+			    	break;
+			    //支付成功
+			    case "1":
+			    	$(".success").removeClass('hide');
+			    	payEmail(orderId);//发送支付成功邮件给orderId所对应的用户
+			    	break;
+			}
+		});
+	}
+}();
+
+function payEmail(orderNumber){
+	$.ajax({
+		url:baseURL+"SendEmailAfterPaySuccess",
+		data:"orderNumber="+orderNumber,
+		type:"GET",
+		success:function(result){
+			//解析显示支付基本信息
+			alert("支付成功确认邮箱已发送");
+		},
+		error:function(){
+    		alert("ajax fail...");
+    		
+    	}
+	});
+}
+
+//获取url参数
+function getQueryString(name) { 
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+    var r = window.location.search.substr(1).match(reg); 
+    if (r != null) return unescape(r[2]); 
+    return null; 
+} 
+
+//返回主页
+$(function(){
+	$(".back-home").click(function(){
+		window.location.href=baseURL;
+	});
+})
+$(document).on("click","#queryPaymentHistory",function(){
+	window.location.href=baseURL+"payList.html?orderNumber="+orderId;
+})
+
+</script>
+</body>
+</html>

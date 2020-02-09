@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./statics/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/index.min.css">
+    <link rel="stylesheet" href="./assets/css/common.min.css_vv20180704.css">
+    <style>
+        .content{
+				width: 936px;
+				background: #fff;
+				position: relative;
+				margin: 30px auto;
+				padding: 20px;
+			}
+			.content .reg-intro-text{
+				color: #999
+			}
+			.content .top{
+				width: 100%;
+				float: left;
+				position: relative;
+			}
+			.content .reg-description-text{
+				color: #999
+			}
+			.content .header{
+				margin: 0 20px 0;
+				min-height: 50px;
+				position: relative;
+				width: 896px;
+			}
+			.content .logoRight{
+				display: inline-block;
+				width: 300px;
+				vertical-align: middle;
+				padding-left: 30px;
+				line-height: 1.8em;
+				color: #6E8EA5
+			}
+			.content .middle {
+				padding: 10px 20px;
+				clear: both;
+				position: relative;
+			}
+			.content h1{
+				z-index: 1000;
+				padding: 30px 0 20px;
+				clear: both;
+				color: #46c2ba;
+				text-align: center;
+			}
+			.content .section-header{
+				color: #6E8EA5;
+				background: #AAD5EE;
+				font-size: 1.6em;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				padding: 5px;
+			}
+			.content .reg-process-content{
+				padding: 10px 0;
+				float: left;
+				width: 100%;
+			}
+			.content .reg-confirmation-login{
+				margin: 0 0 15px 0;
+				float: left;
+				width: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			.content .reg-field-container{
+				background: #E5F2FA;
+				margin: 0 0 2px 0;
+				padding: 5px 10px 3px 10px;
+				overflow: hidden;
+				float: left;
+				width: 99%;
+				position: relative;
+			}
+			.content .reg-process-row{
+				float: left;
+				width: 100%;
+			}
+			.content .reg-field-left-column{
+				width: 40%;
+				float: left;
+				text-align: right;
+				padding: 0 10px 0 0;
+				font-weight: bold;
+				color: #cc0000;
+			}
+			.gray{
+				color: #999;
+			}
+    .pay-title{
+        background: #0A78C8;
+        color: aliceblue;
+        border-radius: 5px;
+        text-indent: .5em;
+        font-size: 16px;
+        padding: 8px 0;
+        margin-top: 8px;
+    }
+    .pay-title .glyphicon{
+        vertical-align: middle
+    }
+    .pay-type{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    .pay-type .pay-item{
+        width: 150px;
+        height: 70px;
+        background: url("./assets/images/wx.jpg") no-repeat center;
+        background-size: 60%;
+        border: 1px #bbb solid;
+        cursor: pointer;
+    }
+    .pay-type .pay-item:nth-of-type(1){
+        background-size: 50%;
+        border-color: #0A78C8
+    }
+    .pay-type .pay-item:nth-of-type(2){
+        background-image: url("./assets/images/zfb.jpg")
+    }
+    .pay-type .pay-item:nth-of-type(3){
+        background-image: url("./assets/images/yl.jpg")
+    }
+    .pay-type .pay-item:nth-of-type(4){
+        background-image: url("./assets/images/paypal.jpg");
+    }
+    .pay-type-info{
+        margin: 30px 0 20px;
+        text-align: center
+    }
+    .pay-type-info span{
+        font-size: 16px;
+        font-weight: bold;
+        color: #0A78C8
+    }
+    </style>
+    <title>pay</title>
+</head>
+<body>
+<div class="content">
+    <div class="top">
+        <img src="./assets/images/logo.png" alt="">
+        <div class="logoRight">
+            <p>第24届国际电磁无损评估研讨会 <br>
+                (ENDE2019)<br>
+                四川成都龙之梦酒店<br>
+                9月11日 - 14日
+            </p>
+        </div>
+    </div>
+    <div class="bottom clearfix">
+            <div class="clearfix">
+                <h1>ENDE 2019</h1>
+                <div class="reg-intro-text">
+                    <p>
+                        <strong style="text-align: justify;">
+                            <span style="font-family: Arial, Helvetica, sans-serif;">
+    
+                                <em>
+                                    &nbsp;<br>温馨提示: <br>
+                                </em>
+                            </span>
+                        </strong>
+                        <span style="text-align: justify; font-family: Arial, Helvetica, sans-serif;">
+                            <br>
+                            人民币缴费支持微信支付、支付宝支付和银行转账三种在线支付方式。美元缴费仅支持PAYPAL。请点击进行相应的支付操作。两种货币都支持会议现场接待处缴费，时间2019年9月11日 - 13日，借记卡、信用卡和现金可用。
+
+                            <br>
+    
+                        </span>
+                    </p>
+                </div>
+                <h2 class="section-header" style="position:relative">
+                    <span>注册缴费</span>
+                    <div style="right: 10px; position: absolute; bottom:3px; font-size: 14px;">
+                        <label for="">选择币种： </label>
+                        <select name="" id="">
+                            <option value="">人民币</option>
+                            <option value="">美元</option>
+                        </select>
+                    </div>
+                </h2>
+                <div class="reg-process-content">
+                    <div class="reg-description-text">
+                        <p><span>
+                            <strong>Please enter your e-mail address below.</strong>
+                        </span></p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    <div class="news" style="width:100%">
+        <p class="pay-title"><i class="glyphicon glyphicon-user"></i> 注册名单:</p>
+        <table class="table table-bordered table-hover">
+                <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>注册类型</th>
+                            <th>金额</th>
+                            <th>是否打印海报</th>
+                            <th>个人小计</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+        </table>
+    
+        <table class="table table-bordered" style="display: none">
+            <thead>
+                <tr>
+                    <th class="text-center">没有注册信息</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center"><button class="btn btn-primary">立即注册</button></td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <p class="pay-title"><i class="glyphicon glyphicon-search"></i> 搜索人员:</p>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="搜索其他人员">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button">搜索</button>
+            </span>
+        </div>
+        <table class="table table-bordered" style="margin-top: 20px">
+                <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>注册类型</th>
+                            <th>金额</th>
+                            <th>是否打印海报</th>
+                            <th>个人小计</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+        </table>
+        <div style="display: flex; justify-content:space-between;padding: 20px 0; line-height: 46px;">
+            <div>注册信息有误？<a href="#">修改注册信息</a></div>
+            <p class="text-center" style=" font-size: 20px;">总计： <span style="color:#ff9900">12893892.00</span></p>
+            <div>
+                <button class="btn btn-primary btn-lg pull-right" data-toggle="modal" data-target="#myModal">信息确定</button>
+            </div>
+            
+        </div>
+            
+        <div class="text-center" style="margin-top: 30px;">
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">信息确认</h4>
+            </div>
+            <div class="modal-body">
+                <p class="pay-title" style="background-color: #62b900">
+                    人员信息
+                    <p class="pull-right" style="margin:-40px 20px 0 0; color: #fff">币种： 人民币</p>
+                </p>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>注册类型</th>
+                            <th>金额</th>
+                            <th>是否打印海报</th>
+                            <th>个人小计</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                        </tr>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                        </tr>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                        </tr>
+                        <tr>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                            <td>111</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <p class="pay-title" style="background-color: #62b900">订单信息</p>
+                <table class="table table-bordered">
+                    <thead></thead>
+                    <tbody class=" text-center">
+                        <tr>
+                            <th>订单号</th>
+                            <td>263107564226713125</td>
+                        </tr>
+                        <tr>
+                            <th>姓名</th>
+                            <td>支付宝</td>
+                        </tr>
+                        <tr>
+                            <th>订单创建时间</th>
+                            <td>2019-1-9 22:44</td>
+                        </tr>
+                        <tr>
+                            <th>支付时间</th>
+                            <td>2019-1-9 22:44</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pay-type-info">
+                    <span>支付方式：</span>
+
+                </div>
+                <div class="pay-type">
+                        <div class="pay-item"></div>
+                        <div class="pay-item"></div>
+                        <div class="pay-item"></div>
+                        <div class="pay-item">
+                            <p class="text-center" style="margin-top: 49px; font-size: 10px;">仅限境外支付</p>
+                        </div>
+                    </div>
+                
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+              <button type="button" class="btn btn-primary">立即支付</button>
+            </div>
+          </div>
+        </div>
+</div>
+
+<script src="./statics/jquery/3.2.1/jquery.min.js"></script>
+<script src="./statics/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+$(".pay-item").click(function(){
+    $(".pay-item").css("borderColor","#bbb")
+    $(this).css("borderColor","#0A78C8")
+})
+</script>
+</body>
+</html>
