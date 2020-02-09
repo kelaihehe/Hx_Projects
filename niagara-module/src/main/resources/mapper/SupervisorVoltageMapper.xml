@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scu.niagaramodule.mapper.SupervisorVoltageMapper">
+  <resultMap id="BaseResultMap" type="com.scu.niagaramodule.pojo.SupervisorVoltage">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="TIMESTAMP" jdbcType="BIGINT" property="timestamp" />
+    <result column="TRENDFLAGS" jdbcType="INTEGER" property="trendflags" />
+    <result column="STATUS" jdbcType="INTEGER" property="status" />
+    <result column="VALUE" jdbcType="DOUBLE" property="value" />
+    <result column="TRENDFLAGS_TAG" jdbcType="VARCHAR" property="trendflagsTag" />
+    <result column="STATUS_TAG" jdbcType="VARCHAR" property="statusTag" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, TIMESTAMP, TRENDFLAGS, STATUS, VALUE, TRENDFLAGS_TAG, STATUS_TAG
+  </sql>
+  <select id="selectByExample" parameterType="com.scu.niagaramodule.pojo.SupervisorVoltageExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from SUPERVISOR_VOLTAGE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectNByDesc" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from SUPERVISOR_VOLTAGE
+    where value is not null
+    order by ID desc limit 0, #{num,jdbcType=INTEGER};
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SUPERVISOR_VOLTAGE
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from SUPERVISOR_VOLTAGE
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.scu.niagaramodule.pojo.SupervisorVoltageExample">
+    delete from SUPERVISOR_VOLTAGE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.scu.niagaramodule.pojo.SupervisorVoltage">
+    insert into SUPERVISOR_VOLTAGE (ID, TIMESTAMP, TRENDFLAGS, 
+      STATUS, VALUE, TRENDFLAGS_TAG, 
+      STATUS_TAG)
+    values (#{id,jdbcType=INTEGER}, #{timestamp,jdbcType=BIGINT}, #{trendflags,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{value,jdbcType=DOUBLE}, #{trendflagsTag,jdbcType=VARCHAR}, 
+      #{statusTag,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.scu.niagaramodule.pojo.SupervisorVoltage">
+    insert into SUPERVISOR_VOLTAGE
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="timestamp != null">
+        TIMESTAMP,
+      </if>
+      <if test="trendflags != null">
+        TRENDFLAGS,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="value != null">
+        VALUE,
+      </if>
+      <if test="trendflagsTag != null">
+        TRENDFLAGS_TAG,
+      </if>
+      <if test="statusTag != null">
+        STATUS_TAG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="timestamp != null">
+        #{timestamp,jdbcType=BIGINT},
+      </if>
+      <if test="trendflags != null">
+        #{trendflags,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=DOUBLE},
+      </if>
+      <if test="trendflagsTag != null">
+        #{trendflagsTag,jdbcType=VARCHAR},
+      </if>
+      <if test="statusTag != null">
+        #{statusTag,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.scu.niagaramodule.pojo.SupervisorVoltageExample" resultType="java.lang.Long">
+    select count(*) from SUPERVISOR_VOLTAGE
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update SUPERVISOR_VOLTAGE
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.timestamp != null">
+        TIMESTAMP = #{record.timestamp,jdbcType=BIGINT},
+      </if>
+      <if test="record.trendflags != null">
+        TRENDFLAGS = #{record.trendflags,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.value != null">
+        VALUE = #{record.value,jdbcType=DOUBLE},
+      </if>
+      <if test="record.trendflagsTag != null">
+        TRENDFLAGS_TAG = #{record.trendflagsTag,jdbcType=VARCHAR},
+      </if>
+      <if test="record.statusTag != null">
+        STATUS_TAG = #{record.statusTag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update SUPERVISOR_VOLTAGE
+    set ID = #{record.id,jdbcType=INTEGER},
+      TIMESTAMP = #{record.timestamp,jdbcType=BIGINT},
+      TRENDFLAGS = #{record.trendflags,jdbcType=INTEGER},
+      STATUS = #{record.status,jdbcType=INTEGER},
+      VALUE = #{record.value,jdbcType=DOUBLE},
+      TRENDFLAGS_TAG = #{record.trendflagsTag,jdbcType=VARCHAR},
+      STATUS_TAG = #{record.statusTag,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.scu.niagaramodule.pojo.SupervisorVoltage">
+    update SUPERVISOR_VOLTAGE
+    <set>
+      <if test="timestamp != null">
+        TIMESTAMP = #{timestamp,jdbcType=BIGINT},
+      </if>
+      <if test="trendflags != null">
+        TRENDFLAGS = #{trendflags,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="value != null">
+        VALUE = #{value,jdbcType=DOUBLE},
+      </if>
+      <if test="trendflagsTag != null">
+        TRENDFLAGS_TAG = #{trendflagsTag,jdbcType=VARCHAR},
+      </if>
+      <if test="statusTag != null">
+        STATUS_TAG = #{statusTag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.scu.niagaramodule.pojo.SupervisorVoltage">
+    update SUPERVISOR_VOLTAGE
+    set TIMESTAMP = #{timestamp,jdbcType=BIGINT},
+      TRENDFLAGS = #{trendflags,jdbcType=INTEGER},
+      STATUS = #{status,jdbcType=INTEGER},
+      VALUE = #{value,jdbcType=DOUBLE},
+      TRENDFLAGS_TAG = #{trendflagsTag,jdbcType=VARCHAR},
+      STATUS_TAG = #{statusTag,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

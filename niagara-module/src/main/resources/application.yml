@@ -1,0 +1,23 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: niagara-module
+  datasource:
+    # 数据源基本配置
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://120.78.149.124:3306/test?characterEncoding=utf8&amp;useSSL=false
+eureka:
+  instance:
+    prefer-ip-address: true  #注册时用ip进行注册
+    #ip-address: 183.223.218.27
+  client:
+    service-url:
+      defaultZone: http://120.78.149.124:7001/eureka/
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  #config-location: classpath:mybatis/mybatis-config.xml #mybatis的配置文件位置
